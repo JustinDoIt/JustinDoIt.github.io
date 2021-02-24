@@ -1,26 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
-    <title>Gridea</title>
-    <updated>2021-02-22T14:48:53.925Z</updated>
+    <title>张建琦</title>
+    <updated>2021-02-24T03:10:49.335Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>满招损，谦得益</subtitle>
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[组合数学（零）]]></title>
+        <id>https://justindoit.github.io/post/zu-he-shu-xue-ling/</id>
+        <link href="https://justindoit.github.io/post/zu-he-shu-xue-ling/">
+        </link>
+        <updated>2021-02-24T01:48:50.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="组合数学旨在解决什么问题">(组合数学旨在解决什么问题)</h1>
+<p>广义的组合数学（Combinatorics）就是<strong>离散数学</strong>，狭义的组合数学是组合计数、图论、代数结构、数理逻辑等的总称。但这也是不同学者叫法的不同，总之，组合数学是一门研究可数或离散对象的科学。</p>
+<p>离散才有组合，有组合后，就可以有组合计数、组合设计、组合矩阵、<strong>组合优化</strong>几大内容。当然，最主要的就是组合优化。</p>
+<h1 id="组合数学中的著名问题">组合数学中的著名问题</h1>
+<ul>
+<li>计算一些物品在特定条件下分组的方法数目；（排列组合）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%9B%9B%E8%89%B2%E5%AE%9A%E7%90%86">地图着色问题</a>：对世界地图着色，每一个国家使用一种颜色，如果要求相邻国家颜色相异，是否总共只需要四种颜色？（图论）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%8B%BC%E3%80%81%E7%BE%8A%E3%80%81%E8%8F%9C%E9%97%AE%E9%A2%98">船夫过河问题</a>：船夫要把一匹狼、一只羊和一棵白菜运过河。只要船夫不在场，羊就会吃白菜、狼就会吃羊。船夫的船每次只能运送一样东西。怎样把所有东西都运过河？（线性规划）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%82%AE%E5%B7%AE%E9%97%AE%E9%A2%98">中国邮递员问题</a>：邮递员要穿过城市的每条路至少一次，怎样走使得走过的路程最短？（不是NP完全问题，存在多项式复杂度算法）（图论）（先求出度数为奇数的点，用匹配算法算出这些点间的连接方式，然后再用欧拉路径算法求解，这也是图论问题）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98">分配问题</a>：有一些员工和许多任务，各个员工完成不同任务所花费的时间都不同。每个员工只分配一项任务。每项任务只被分配给一个员工，怎样分配员工与任务以使得所花费的时间最少？（线性规划）</li>
+<li>TSP问题：</li>
+</ul>
+<h1 id="数学-计算机-哲学-maybe-not-a-complex-mathematical-theory-but-a-simple-and-effective-theory">(数学 &amp; 计算机 &amp; 哲学) Maybe not a complex mathematical theory but a simple and effective (theory)</h1>
+<p>我最初认识到，<strong>关系</strong>。关系也是映射，函数是一种映射，方程是一种映射(隐函数)，</p>
+<p>现在又认识到，<strong>结构</strong>。<br>
+线性结构 —— List、String<br>
+图结构 —— Graph、Direct Graph、</p>
+<h1 id="离散数学">离散数学</h1>
+<ul>
+<li>数理逻辑</li>
+<li>集合论</li>
+<li>信息论</li>
+<li>数论</li>
+<li>组合数学</li>
+<li>图论</li>
+<li>抽象代数</li>
+<li>理论计算机科学（快速排序算法）</li>
+<li>拓扑学</li>
+<li>运筹学**（研究优化问题的规划论、研究排队(服务)模型的排队论、以及研究博弈模型的博弈论是运筹学最早的三个重要分支）**</li>
+<li>博弈论、决策论、效用理论、社会选择理论</li>
+<li>离散化（离散化关注将连续模型或等式转化为离散形式的过程，通常是基于简化计算的目的。数值分析是离散化的一个重要实例）</li>
+<li>连续数学的离散近似（离散微积分、离散概率分布、离散傅里叶变化、离散几何等等）</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://justindoit.github.io/post/hello-gridea/</id>
         <link href="https://justindoit.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！</p>
+<p>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！</p>
+<p>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 <!-- more -->
 <p><a href="https://github.com/getgridea/gridea">Github</a><br>
 <a href="https://gridea.dev/">Gridea 主页</a><br>

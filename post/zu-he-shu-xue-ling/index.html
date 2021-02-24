@@ -1,0 +1,205 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>组合数学（零） | 张建琦</title>
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico?v=1614135847749">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="组合数学（零） | 张建琦 - Atom Feed" href="https://justindoit.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="(组合数学旨在解决什么问题)
+广义的组合数学（Combinatorics）就是离散数学，狭义的组合数学是组合计数、图论、代数结构、数理逻辑等的总称。但这也是不同学者叫法的不同，总之，组合数学是一门研究可数或离散对象的科学。
+离散才有组合，有..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://justindoit.github.io">
+  <img class="avatar" src="https://justindoit.github.io/images/avatar.png?v=1614135847749" alt="">
+  </a>
+  <h1 class="site-title">
+    张建琦
+  </h1>
+  <p class="site-description">
+    满招损，谦得益
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              组合数学（零）
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-02-24
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="组合数学旨在解决什么问题">(组合数学旨在解决什么问题)</h1>
+<p>广义的组合数学（Combinatorics）就是<strong>离散数学</strong>，狭义的组合数学是组合计数、图论、代数结构、数理逻辑等的总称。但这也是不同学者叫法的不同，总之，组合数学是一门研究可数或离散对象的科学。</p>
+<p>离散才有组合，有组合后，就可以有组合计数、组合设计、组合矩阵、<strong>组合优化</strong>几大内容。当然，最主要的就是组合优化。</p>
+<h1 id="组合数学中的著名问题">组合数学中的著名问题</h1>
+<ul>
+<li>计算一些物品在特定条件下分组的方法数目；（排列组合）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%9B%9B%E8%89%B2%E5%AE%9A%E7%90%86">地图着色问题</a>：对世界地图着色，每一个国家使用一种颜色，如果要求相邻国家颜色相异，是否总共只需要四种颜色？（图论）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%8B%BC%E3%80%81%E7%BE%8A%E3%80%81%E8%8F%9C%E9%97%AE%E9%A2%98">船夫过河问题</a>：船夫要把一匹狼、一只羊和一棵白菜运过河。只要船夫不在场，羊就会吃白菜、狼就会吃羊。船夫的船每次只能运送一样东西。怎样把所有东西都运过河？（线性规划）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%82%AE%E5%B7%AE%E9%97%AE%E9%A2%98">中国邮递员问题</a>：邮递员要穿过城市的每条路至少一次，怎样走使得走过的路程最短？（不是NP完全问题，存在多项式复杂度算法）（图论）（先求出度数为奇数的点，用匹配算法算出这些点间的连接方式，然后再用欧拉路径算法求解，这也是图论问题）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98">分配问题</a>：有一些员工和许多任务，各个员工完成不同任务所花费的时间都不同。每个员工只分配一项任务。每项任务只被分配给一个员工，怎样分配员工与任务以使得所花费的时间最少？（线性规划）</li>
+<li>TSP问题：</li>
+</ul>
+<h1 id="数学-计算机-哲学-maybe-not-a-complex-mathematical-theory-but-a-simple-and-effective-theory">(数学 &amp; 计算机 &amp; 哲学) Maybe not a complex mathematical theory but a simple and effective (theory)</h1>
+<p>我最初认识到，<strong>关系</strong>。关系也是映射，函数是一种映射，方程是一种映射(隐函数)，</p>
+<p>现在又认识到，<strong>结构</strong>。<br>
+线性结构 —— List、String<br>
+图结构 —— Graph、Direct Graph、</p>
+<h1 id="离散数学">离散数学</h1>
+<ul>
+<li>数理逻辑</li>
+<li>集合论</li>
+<li>信息论</li>
+<li>数论</li>
+<li>组合数学</li>
+<li>图论</li>
+<li>抽象代数</li>
+<li>理论计算机科学（快速排序算法）</li>
+<li>拓扑学</li>
+<li>运筹学**（研究优化问题的规划论、研究排队(服务)模型的排队论、以及研究博弈模型的博弈论是运筹学最早的三个重要分支）**</li>
+<li>博弈论、决策论、效用理论、社会选择理论</li>
+<li>离散化（离散化关注将连续模型或等式转化为离散形式的过程，通常是基于简化计算的目的。数值分析是离散化的一个重要实例）</li>
+<li>连续数学的离散近似（离散微积分、离散概率分布、离散傅里叶变化、离散几何等等）</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E6%97%A8%E5%9C%A8%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">(组合数学旨在解决什么问题)</a></li>
+<li><a href="#%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%91%97%E5%90%8D%E9%97%AE%E9%A2%98">组合数学中的著名问题</a></li>
+<li><a href="#%E6%95%B0%E5%AD%A6-%E8%AE%A1%E7%AE%97%E6%9C%BA-%E5%93%B2%E5%AD%A6-maybe-not-a-complex-mathematical-theory-but-a-simple-and-effective-theory">(数学 &amp; 计算机 &amp; 哲学) Maybe not a complex mathematical theory but a simple and effective (theory)</a></li>
+<li><a href="#%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6">离散数学</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://justindoit.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://justindoit.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
