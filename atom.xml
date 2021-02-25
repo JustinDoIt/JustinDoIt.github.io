@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-02-24T03:10:49.335Z</updated>
+    <updated>2021-02-25T06:54:18.116Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -10,6 +10,123 @@
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[半年小结（六）学东西]]></title>
+        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-liu-xue-dong-xi/</id>
+        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-liu-xue-dong-xi/">
+        </link>
+        <updated>2021-02-25T06:24:54.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="实践为导向的学习">实践为导向的学习</h1>
+<ul>
+<li>复习机器学习，学习随机森林、XGBoost及 Sklearn；</li>
+<li>缕清标准特征工程的流程</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[半年小结（五）集体与合作]]></title>
+        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-wu-ji-ti-yu-he-zuo/</id>
+        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-wu-ji-ti-yu-he-zuo/">
+        </link>
+        <updated>2021-02-25T06:22:47.000Z</updated>
+        <content type="html"><![CDATA[<p>课题之多方向之广，凭一己之力是无法</p>
+<h2 id="带给他的不该是认知而该是问题">带给他的不该是认知而该是问题</h2>
+<p>我妹妹 ——“谈恋爱要看他们家做家务的是爸爸还是妈妈”</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[半年小结（四）写程序]]></title>
+        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-si-xie-cheng-xu/</id>
+        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-si-xie-cheng-xu/">
+        </link>
+        <updated>2021-02-25T06:16:15.000Z</updated>
+        <content type="html"><![CDATA[<p>一个是</p>
+<h2 id="python的思维-数据结构的思维">Python的思维 —— 数据结构的思维</h2>
+<p>师兄看到我写的程序，说——“你这完全是写C的思维，不是写Python的”<br>
+if else<br>
+列表</p>
+<h2 id="运球一样操控数据结构">运球一样操控数据结构</h2>
+<p>学篮球的时候，教练教的就是如何</p>
+<h3 id="think-in-python-2e">《Think in Python》 2e</h3>
+<p>我记得大一时候简单读过 《Think in Java》第一感觉就是，对我来说 level还太高。现在随着实践的增加，代码量的提升（阅读量和写作量）</p>
+<p>也就是说，对于刚开始接触编程学习，对于语法都不够熟悉的同学来说，不应该读这些太 high-level的书，这种思维方式的指导是一种</p>
+<h3 id="读书笔记">读书笔记</h3>
+<h1 id="读程序">读程序</h1>
+<p>Sourceinsight、函数调用关系图</p>
+<p>假设检验假设检验</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[半年小结（三）做事情]]></title>
+        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-san-zuo-shi-qing/</id>
+        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-san-zuo-shi-qing/">
+        </link>
+        <updated>2021-02-25T06:15:59.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="与我而言最重要的是分清主次做事情学东西的主轴">与我而言，最重要的是分清主次，做事情学东西的主轴，</h1>
+<p>不论是七月还是十一月</p>
+<p>拿结果的思维</p>
+<p>一件事做到最后</p>
+<h1 id="思维上">思维上</h1>
+<h2 id="为实验室做事情为其他人解决问题">为实验室做事情，为其他人解决问题</h2>
+<p>做的越多，学的越多</p>
+<p>为别人解决问题</p>
+<h1 id="结果">结果</h1>
+<h2 id="江老师组常宏-网页上自动积累信息">江老师组常宏 —— 网页上自动积累信息</h2>
+<h2 id="魏凡师姐-代谢方程自动配平">魏凡师姐 —— 代谢方程自动配平</h2>
+<h2 id="志强-小鼠的自动姿势识别">志强 —— 小鼠的自动姿势识别</h2>
+<h2 id="张老师">张老师 ——</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[半年小结（二）读文献]]></title>
+        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-er-du-wen-xian/</id>
+        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-er-du-wen-xian/">
+        </link>
+        <updated>2021-02-25T05:59:07.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="0-我的这半年与文献的故事">0 我的这半年与文献的故事</h1>
+<p>我不建议漫无目的的瞎读文献，读完也不记笔记什么都忘记了。要知道，<strong>读文献是要解决你的问题的</strong>。在研一刚进入实验室明确领域与方向后，你的问题就是，这个领域和方向大概都在干什么？（用什么技术、方法解决什么问题？结果到了什么样？）；对于研二才确定选题，研一自由探索的同学，你的问题就是，根据问题域的不同，都有哪些领域？（都有哪些问题域？）这些问题域彼此之间都有什么相同点和不同点？</p>
+<p>在研究所的一个多月，就感觉自己什么都不知道。到了学校有些报复性阅读，Bioinformatics 2019年一共发表了 1239篇文章，2020年一共发表了1357篇篇文章，我可以说大部分我其实都浏览过题目和摘要，很感兴趣的也都点开过全文略读，一个感觉就是读完后，微信公众号上推送的文献你都知道都是在说什么了</p>
+<h1 id="1-略读">1 略读</h1>
+<p>首先明确一点，略读也分几个等级</p>
+<ol>
+<li>只读摘要；</li>
+<li></li>
+</ol>
+<h1 id="2-精读文献">2 精读文献</h1>
+<p>可能是老板比较有眼光，我精读两篇文献都比较硬核，第一篇是 上海细胞所陈洛南老师 2016年发表在 Nucleic Acids Research(IF=11+) 的<br>
+其实对于老板来说也很痛苦，很难指望一个一年级新生把文献读的太懂太透彻，尤其知识跨度大，许多细节尤其难以<br>
+我的一个感受就是，开始很痛苦，每次豁然开朗之后</p>
+<ol>
+<li>尽量找一些有代码的论文开始啃；</li>
+<li></li>
+</ol>
+<h1 id="3-结果">3 结果</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[半年小结（一）思维、习惯与方法论的转变]]></title>
+        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-yi-za-xiang/</id>
+        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-yi-za-xiang/">
+        </link>
+        <updated>2021-02-25T05:49:45.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>去年11月1日开始断断续续写日报（钉钉、iPad等方式都尝试过），最后从12月1日开始正式开始用本子记录每天的学习、工作和思考，今天是2月25，刚好满满记了一本（），本子已经破烂不堪，但是查看内容却发现如此记录非常有用。这篇文章对我这一整本日记本（也是从12月1日第一次落笔写上12月1开始到现在）的一个归纳总结</p>
+</blockquote>
+<h1 id="what-i-wish-i-know-when-i-was-20学习-做事方法二十岁时我多希望的能知道的学习方法">😁What I wish I know when I was 20（学习、做事方法）二十岁时我多希望的能知道的学习方法</h1>
+<ul>
+<li>快速学习法说白了就是程序学习法；学的是程序，输入和输出；</li>
+<li></li>
+</ul>
+<h1 id="做事">做事</h1>
+<ul>
+<li>解决问题的思维导向；说什么不重要，重要的是怎么做</li>
+<li></li>
+</ul>
+<h2 id="解决问题的思维导向">解决问题的思维导向</h2>
+<p>我从来不喜欢与人争论</p>
+<h1 id="记笔记的习惯">记笔记的习惯、</h1>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[组合数学（零）]]></title>
         <id>https://justindoit.github.io/post/zu-he-shu-xue-ling/</id>
