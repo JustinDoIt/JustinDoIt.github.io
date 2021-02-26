@@ -1,13 +1,20 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>组合数学（零） | 张建琦</title>
-<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico?v=1614329131627">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico?v=1614329190333">
 <link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="组合数学（零） | 张建琦 - Atom Feed" href="https://justindoit.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
@@ -15,86 +22,81 @@
 广义的组合数学（Combinatorics）就是离散数学，狭义的组合数学是组合计数、图论、代数结构、数理逻辑等的总称。但这也是不同学者叫法的不同，总之，组合数学是一门研究可数或离散对象的科学。
 离散才有组合，有..." />
     <meta name="keywords" content="组合优化与运筹学" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://justindoit.github.io">
-  <img class="avatar" src="https://justindoit.github.io/images/avatar.png?v=1614329131627" alt="">
-  </a>
-  <h1 class="site-title">
-    张建琦
-  </h1>
-  <p class="site-description">
-    满招损，谦得益
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://justindoit.github.io">
+        <img src="https://justindoit.github.io/images/avatar.png?v=1614329190333" class="site-logo">
+        <h1 class="site-title">张建琦</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
+      
+    </div>
+    <div class="site-description">
+      满招损，谦得益
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://justindoit.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              组合数学（零）
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-02-24
-              </span>
-              <span>
-                3 min read
-              </span>
-              
-                <a href="https://justindoit.github.io/tag/2oZp7u0T7/" class="post-tag">
-                  # 组合优化与运筹学
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">组合数学（零）</h2>
+            <div class="post-date">2021-02-24</div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <h1 id="组合数学旨在解决什么问题">(组合数学旨在解决什么问题)</h1>
+            <div class="post-content" v-pre>
+              <h1 id="组合数学旨在解决什么问题">(组合数学旨在解决什么问题)</h1>
 <p>广义的组合数学（Combinatorics）就是<strong>离散数学</strong>，狭义的组合数学是组合计数、图论、代数结构、数理逻辑等的总称。但这也是不同学者叫法的不同，总之，组合数学是一门研究可数或离散对象的科学。</p>
 <p>离散才有组合，有组合后，就可以有组合计数、组合设计、组合矩阵、<strong>组合优化</strong>几大内容。当然，最主要的就是组合优化。</p>
 <h1 id="组合数学中的著名问题">组合数学中的著名问题</h1>
@@ -128,82 +130,53 @@
 <li>连续数学的离散近似（离散微积分、离散概率分布、离散傅里叶变化、离散几何等等）</li>
 </ul>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li><a href="#%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E6%97%A8%E5%9C%A8%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">(组合数学旨在解决什么问题)</a></li>
-<li><a href="#%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%91%97%E5%90%8D%E9%97%AE%E9%A2%98">组合数学中的著名问题</a></li>
-<li><a href="#%E6%95%B0%E5%AD%A6-%E8%AE%A1%E7%AE%97%E6%9C%BA-%E5%93%B2%E5%AD%A6-maybe-not-a-complex-mathematical-theory-but-a-simple-and-effective-theory">(数学 &amp; 计算机 &amp; 哲学) Maybe not a complex mathematical theory but a simple and effective (theory)</a></li>
-<li><a href="#%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6">离散数学</a></li>
-</ul>
-
-              </div>
             </div>
-          </article>
-        </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://justindoit.github.io/tag/2oZp7u0T7/" class="tag">
+                    组合优化与运筹学
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://justindoit.github.io/post/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://justindoit.github.io/post/hello-gridea/">
-              <h3 class="post-title">
-                Hello Gridea
-              </h3>
-            </a>
+            
+
           </div>
-        
 
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://justindoit.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
+        </div>
       </div>
     </div>
 
-    <script>
-      hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+AOS.init();
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
+</script>
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
+
+
+
   </body>
 </html>

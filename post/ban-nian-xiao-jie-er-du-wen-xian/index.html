@@ -1,99 +1,101 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>半年小结（二）读文献 | 张建琦</title>
-<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico?v=1614329131627">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico?v=1614329190333">
 <link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="半年小结（二）读文献 | 张建琦 - Atom Feed" href="https://justindoit.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
     <meta name="description" content="0 我的这半年与文献的故事
 我不建议漫无目的的瞎读文献，读完也不记笔记什么都忘记了。要知道，读文献是要解决你的问题的。在研一刚进入实验室明确领域与方向后，你的问题就是，这个领域和方向大概都在干什么？（用什么技术、方法解决什么问题？结果到了什..." />
     <meta name="keywords" content="总结" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://justindoit.github.io">
-  <img class="avatar" src="https://justindoit.github.io/images/avatar.png?v=1614329131627" alt="">
-  </a>
-  <h1 class="site-title">
-    张建琦
-  </h1>
-  <p class="site-description">
-    满招损，谦得益
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://justindoit.github.io">
+        <img src="https://justindoit.github.io/images/avatar.png?v=1614329190333" class="site-logo">
+        <h1 class="site-title">张建琦</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
+      
+    </div>
+    <div class="site-description">
+      满招损，谦得益
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://justindoit.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              半年小结（二）读文献
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-02-25
-              </span>
-              <span>
-                2 min read
-              </span>
-              
-                <a href="https://justindoit.github.io/tag/xgH0eW9Q1/" class="post-tag">
-                  # 总结
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">半年小结（二）读文献</h2>
+            <div class="post-date">2021-02-25</div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <h1 id="0-我的这半年与文献的故事">0 我的这半年与文献的故事</h1>
+            <div class="post-content" v-pre>
+              <h1 id="0-我的这半年与文献的故事">0 我的这半年与文献的故事</h1>
 <p>我不建议漫无目的的瞎读文献，读完也不记笔记什么都忘记了。要知道，<strong>读文献是要解决你的问题的</strong>。在研一刚进入实验室明确领域与方向后，你的问题就是，这个领域和方向大概都在干什么？（用什么技术、方法解决什么问题？结果到了什么样？）；对于研二才确定选题，研一自由探索的同学，你的问题就是，根据问题域的不同，都有哪些领域？（都有哪些问题域？）这些问题域彼此之间都有什么相同点和不同点？</p>
 <p>在研究所的一个多月，就感觉自己什么都不知道。到了学校有些报复性阅读，Bioinformatics 2019年一共发表了 1239篇文章，2020年一共发表了1357篇篇文章，我可以说大部分我其实都浏览过题目和摘要，很感兴趣的也都点开过全文略读，一个感觉就是读完后，微信公众号上推送的文献你都知道都是在说什么了</p>
 <h1 id="1-略读">1 略读</h1>
@@ -112,82 +114,53 @@
 </ol>
 <h1 id="3-结果">3 结果</h1>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li><a href="#0-%E6%88%91%E7%9A%84%E8%BF%99%E5%8D%8A%E5%B9%B4%E4%B8%8E%E6%96%87%E7%8C%AE%E7%9A%84%E6%95%85%E4%BA%8B">0 我的这半年与文献的故事</a></li>
-<li><a href="#1-%E7%95%A5%E8%AF%BB">1 略读</a></li>
-<li><a href="#2-%E7%B2%BE%E8%AF%BB%E6%96%87%E7%8C%AE">2 精读文献</a></li>
-<li><a href="#3-%E7%BB%93%E6%9E%9C">3 结果</a></li>
-</ul>
-
-              </div>
             </div>
-          </article>
-        </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://justindoit.github.io/tag/xgH0eW9Q1/" class="tag">
+                    总结
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://justindoit.github.io/post/ban-nian-xiao-jie-yi-za-xiang/">
+                  <h3 class="post-title">
+                    半年小结（一）思维、习惯与方法论的转变
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://justindoit.github.io/post/ban-nian-xiao-jie-yi-za-xiang/">
-              <h3 class="post-title">
-                半年小结（一）思维、习惯与方法论的转变
-              </h3>
-            </a>
+            
+
           </div>
-        
 
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://justindoit.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
+        </div>
       </div>
     </div>
 
-    <script>
-      hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+AOS.init();
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
+</script>
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
+
+
+
   </body>
 </html>
