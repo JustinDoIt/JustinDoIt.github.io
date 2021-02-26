@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-02-26T09:06:57.637Z</updated>
+    <updated>2021-02-26T09:11:10.336Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -16,16 +16,6 @@
         <link href="https://justindoit.github.io/post/tu-lun-yi/">
         </link>
         <updated>2021-02-26T06:36:28.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>宇宙的答案中，最顶层的一个是<strong>结构</strong>，一个是<strong>运算</strong>。图结构就属于三大结构中的一种。<br>
----我自己</p>
-</blockquote>
-<p>定义：<strong>图论 (Graph theory)</strong> 是数学的一个分支。图 (Graph) 是由若干给定的顶点及连接两顶点的边所构成的图形，这种图形通常用来描述某些事物之间的某种特定关系。顶点用于代表事物，连接两顶点的边则用于表示两个事物间具有这种关系。[维基百科]:</p>
-<h2 id=""></h2>
-<ol>
-<li></li>
-</ol>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[半年小结（七）组会]]></title>
@@ -33,14 +23,6 @@
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-qi-zu-hui/">
         </link>
         <updated>2021-02-25T07:18:52.000Z</updated>
-        <content type="html"><![CDATA[<p>我认为组会是一个非常好的体系，本质是沟通</p>
-<p>把自己的工作展示给其他人的机会，也是让老板清楚知道你过去一段时间做了什么，可以给予什么指导、提出什么问题的机会</p>
-<h2 id="先给结果">先给结果</h2>
-<p>听了许多师兄的汇报，一种风格是“我这周干了XXX，结果不怎么样，然后干了XXXX，”</p>
-<p>另一种风格是“这周主要干了3件事，第一件事是XXX（同时放出结果图），第二件事是XXX（同时放出结果图），第三件事是XXXX（同时放出结果图）”然后对几张结果图进行讲解。之后如果老师追问细节再讲细节</p>
-<h4 id="结果能放几张图就不要">结果能放几张图就不要</h4>
-<p>你应该是在对结果图进行讲解</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[半年小结（六）学东西]]></title>
@@ -48,14 +30,6 @@
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-liu-xue-dong-xi/">
         </link>
         <updated>2021-02-25T06:24:54.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="快速学习">快速学习</h1>
-<p>网上老看到“快速学习”、“学习方法”之类的，我其实很厌烦。但是</p>
-<h3 id="实践为导向的学习">实践为导向的学习</h3>
-<ul>
-<li>复习机器学习，学习随机森林、XGBoost及 Sklearn；</li>
-<li>缕清标准特征工程的流程</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[半年小结（五）集体与合作]]></title>
@@ -63,10 +37,6 @@
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-wu-ji-ti-yu-he-zuo/">
         </link>
         <updated>2021-02-25T06:22:47.000Z</updated>
-        <content type="html"><![CDATA[<p>课题之多方向之广，凭一己之力是无法</p>
-<h2 id="带给他的不该是认知而该是问题">带给他的不该是认知而该是问题</h2>
-<p>我妹妹 ——“谈恋爱要看他们家做家务的是爸爸还是妈妈”</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[半年小结（四）写程序]]></title>
@@ -74,21 +44,6 @@
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-si-xie-cheng-xu/">
         </link>
         <updated>2021-02-25T06:16:15.000Z</updated>
-        <content type="html"><![CDATA[<p>一个是</p>
-<h2 id="python的思维-数据结构的思维">Python的思维 —— 数据结构的思维</h2>
-<p>师兄看到我写的程序，说——“你这完全是写C的思维，不是写Python的”<br>
-if else<br>
-列表</p>
-<h2 id="运球一样操控数据结构">运球一样操控数据结构</h2>
-<p>学篮球的时候，教练教的就是如何</p>
-<h3 id="think-in-python-2e">《Think in Python》 2e</h3>
-<p>我记得大一时候简单读过 《Think in Java》第一感觉就是，对我来说 level还太高。现在随着实践的增加，代码量的提升（阅读量和写作量）</p>
-<p>也就是说，对于刚开始接触编程学习，对于语法都不够熟悉的同学来说，不应该读这些太 high-level的书，这种思维方式的指导是一种</p>
-<h3 id="读书笔记">读书笔记</h3>
-<h1 id="读程序">读程序</h1>
-<p>Sourceinsight、函数调用关系图</p>
-<p>假设检验假设检验</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[半年小结（三）做事情]]></title>
@@ -96,20 +51,6 @@ if else<br>
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-san-zuo-shi-qing/">
         </link>
         <updated>2021-02-25T06:15:59.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="与我而言最重要的是分清主次做事情学东西的主轴">与我而言，最重要的是分清主次，做事情学东西的主轴，</h1>
-<p>不论是七月还是十一月</p>
-<p>拿结果的思维</p>
-<p>一件事做到最后</p>
-<h1 id="思维上">思维上</h1>
-<h2 id="为实验室做事情为其他人解决问题">为实验室做事情，为其他人解决问题</h2>
-<p>做的越多，学的越多</p>
-<p>为别人解决问题</p>
-<h1 id="结果">结果</h1>
-<h2 id="江老师组常宏-网页上自动积累信息">江老师组常宏 —— 网页上自动积累信息</h2>
-<h2 id="魏凡师姐-代谢方程自动配平">魏凡师姐 —— 代谢方程自动配平</h2>
-<h2 id="志强-小鼠的自动姿势识别">志强 —— 小鼠的自动姿势识别</h2>
-<h2 id="张老师">张老师 ——</h2>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[半年小结（二）读文献]]></title>
@@ -117,25 +58,6 @@ if else<br>
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-er-du-wen-xian/">
         </link>
         <updated>2021-02-25T05:59:07.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="0-我的这半年与文献的故事">0 我的这半年与文献的故事</h1>
-<p>我不建议漫无目的的瞎读文献，读完也不记笔记什么都忘记了。要知道，<strong>读文献是要解决你的问题的</strong>。在研一刚进入实验室明确领域与方向后，你的问题就是，这个领域和方向大概都在干什么？（用什么技术、方法解决什么问题？结果到了什么样？）；对于研二才确定选题，研一自由探索的同学，你的问题就是，根据问题域的不同，都有哪些领域？（都有哪些问题域？）这些问题域彼此之间都有什么相同点和不同点？</p>
-<p>在研究所的一个多月，就感觉自己什么都不知道。到了学校有些报复性阅读，Bioinformatics 2019年一共发表了 1239篇文章，2020年一共发表了1357篇篇文章，我可以说大部分我其实都浏览过题目和摘要，很感兴趣的也都点开过全文略读，一个感觉就是读完后，微信公众号上推送的文献你都知道都是在说什么了</p>
-<h1 id="1-略读">1 略读</h1>
-<p>首先明确一点，略读也分几个等级</p>
-<ol>
-<li>只读摘要；</li>
-<li></li>
-</ol>
-<h1 id="2-精读文献">2 精读文献</h1>
-<p>可能是老板比较有眼光，我精读两篇文献都比较硬核，第一篇是 上海细胞所陈洛南老师 2016年发表在 Nucleic Acids Research(IF=11+) 的<br>
-其实对于老板来说也很痛苦，很难指望一个一年级新生把文献读的太懂太透彻，尤其知识跨度大，许多细节尤其难以<br>
-我的一个感受就是，开始很痛苦，每次豁然开朗之后</p>
-<ol>
-<li>尽量找一些有代码的论文开始啃；</li>
-<li></li>
-</ol>
-<h1 id="3-结果">3 结果</h1>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[半年小结（一）思维、习惯与方法论的转变]]></title>
@@ -143,81 +65,6 @@ if else<br>
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-yi-za-xiang/">
         </link>
         <updated>2021-02-25T05:49:45.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>去年11月1日开始断断续续写日报（钉钉、iPad等方式都尝试过），最后从12月1日开始正式开始用本子记录每天的学习、工作和思考，今天是2月25，刚好满满记了一本（），本子已经破烂不堪，但是查看内容却发现如此记录非常有用。这篇文章对我这一整本日记本（也是从12月1日第一次落笔写上12月1开始到现在）的一个归纳总结</p>
-</blockquote>
-<h1 id="what-i-wish-i-know-when-i-was-20学习-做事方法二十岁时我多希望的能知道的学习方法">😁What I wish I know when I was 20（学习、做事方法）二十岁时我多希望的能知道的学习方法</h1>
-<ul>
-<li>快速学习法说白了就是程序学习法；学的是程序，输入和输出；</li>
-<li></li>
-</ul>
-<h1 id="做事">做事</h1>
-<ul>
-<li>解决问题的思维导向；说什么不重要，重要的是怎么做</li>
-<li></li>
-</ul>
-<h2 id="解决问题的思维导向">解决问题的思维导向</h2>
-<p>我从来不喜欢与人争论</p>
-<h1 id="记笔记的习惯">记笔记的习惯、</h1>
-<h1 id="信息检索的思维方式">信息检索的思维方式</h1>
-<ul>
-<li>Google当然是最主要的</li>
-<li>Github搜索</li>
-<li>google 的高级搜索方式
-<ul>
-<li>site:github.io  高质量博客</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>微信搜索（微信公众号）</li>
-<li>b站搜索</li>
-<li>（微博）</li>
-</ol>
-<p>甚至是。。。</p>
-<ol>
-<li>淘宝搜索</li>
-<li>Chrome 商店搜索
-<ol>
-<li>e.g. sci-hub、github显示下载等等</li>
-</ol>
-</li>
-<li>油猴插件搜索
-<ol>
-<li>
-<ol>
-<li>e.g. sci-hub、github显示下载、文件树等等</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="定期">定期</h2>
-<p>2-26 在Chrome 商店 搜索</p>
-<ul>
-<li>
-<p>微信 —— 无果</p>
-</li>
-<li>
-<p>钉钉 —— 无果</p>
-</li>
-<li>
-<p>微信公众号 —— 无果</p>
-</li>
-<li>
-<p>vscode --- 似乎无果</p>
-</li>
-<li>
-<p>B站 --- 似乎无果，很多但好像没有我很需要的功能</p>
-</li>
-<li>
-<p>知乎</p>
-</li>
-<li>
-<p>Markdown --- Markdown here 邮件里转成Markdown</p>
-</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[组合数学（零）]]></title>
@@ -225,40 +72,6 @@ if else<br>
         <link href="https://justindoit.github.io/post/zu-he-shu-xue-ling/">
         </link>
         <updated>2021-02-24T01:48:50.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="组合数学旨在解决什么问题">(组合数学旨在解决什么问题)</h1>
-<p>广义的组合数学（Combinatorics）就是<strong>离散数学</strong>，狭义的组合数学是组合计数、图论、代数结构、数理逻辑等的总称。但这也是不同学者叫法的不同，总之，组合数学是一门研究可数或离散对象的科学。</p>
-<p>离散才有组合，有组合后，就可以有组合计数、组合设计、组合矩阵、<strong>组合优化</strong>几大内容。当然，最主要的就是组合优化。</p>
-<h1 id="组合数学中的著名问题">组合数学中的著名问题</h1>
-<ul>
-<li>计算一些物品在特定条件下分组的方法数目；（排列组合）</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%9B%9B%E8%89%B2%E5%AE%9A%E7%90%86">地图着色问题</a>：对世界地图着色，每一个国家使用一种颜色，如果要求相邻国家颜色相异，是否总共只需要四种颜色？（图论）</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E7%8B%BC%E3%80%81%E7%BE%8A%E3%80%81%E8%8F%9C%E9%97%AE%E9%A2%98">船夫过河问题</a>：船夫要把一匹狼、一只羊和一棵白菜运过河。只要船夫不在场，羊就会吃白菜、狼就会吃羊。船夫的船每次只能运送一样东西。怎样把所有东西都运过河？（线性规划）</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%82%AE%E5%B7%AE%E9%97%AE%E9%A2%98">中国邮递员问题</a>：邮递员要穿过城市的每条路至少一次，怎样走使得走过的路程最短？（不是NP完全问题，存在多项式复杂度算法）（图论）（先求出度数为奇数的点，用匹配算法算出这些点间的连接方式，然后再用欧拉路径算法求解，这也是图论问题）</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98">分配问题</a>：有一些员工和许多任务，各个员工完成不同任务所花费的时间都不同。每个员工只分配一项任务。每项任务只被分配给一个员工，怎样分配员工与任务以使得所花费的时间最少？（线性规划）</li>
-<li>TSP问题：</li>
-</ul>
-<h1 id="数学-计算机-哲学-maybe-not-a-complex-mathematical-theory-but-a-simple-and-effective-theory">(数学 &amp; 计算机 &amp; 哲学) Maybe not a complex mathematical theory but a simple and effective (theory)</h1>
-<p>我最初认识到，<strong>关系</strong>。关系也是映射，函数是一种映射，方程是一种映射(隐函数)，</p>
-<p>现在又认识到，<strong>结构</strong>。<br>
-线性结构 —— List、String<br>
-图结构 —— Graph、Direct Graph、</p>
-<h1 id="离散数学">离散数学</h1>
-<ul>
-<li>数理逻辑</li>
-<li>集合论</li>
-<li>信息论</li>
-<li>数论</li>
-<li>组合数学</li>
-<li>图论</li>
-<li>抽象代数</li>
-<li>理论计算机科学（快速排序算法）</li>
-<li>拓扑学</li>
-<li>运筹学**（研究优化问题的规划论、研究排队(服务)模型的排队论、以及研究博弈模型的博弈论是运筹学最早的三个重要分支）**</li>
-<li>博弈论、决策论、效用理论、社会选择理论</li>
-<li>离散化（离散化关注将连续模型或等式转化为离散形式的过程，通常是基于简化计算的目的。数值分析是离散化的一个重要实例）</li>
-<li>连续数学的离散近似（离散微积分、离散概率分布、离散傅里叶变化、离散几何等等）</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
@@ -271,25 +84,6 @@ if else<br>
 ]]></summary>
         <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！</p>
 <p>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
 ]]></content>
     </entry>
 </feed>
