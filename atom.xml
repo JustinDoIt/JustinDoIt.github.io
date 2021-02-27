@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-02-27T08:09:24.319Z</updated>
+    <updated>2021-02-27T08:21:06.969Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[科研心得 —— 讲故事的能力]]></title>
+        <id>https://justindoit.github.io/post/Vx6bN6bZ2/</id>
+        <link href="https://justindoit.github.io/post/Vx6bN6bZ2/">
+        </link>
+        <updated>2021-02-27T08:17:22.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[什么是科研？什么是科学？ & 一些科研体会]]></title>
+        <id>https://justindoit.github.io/post/raVCR8kEA/</id>
+        <link href="https://justindoit.github.io/post/raVCR8kEA/">
+        </link>
+        <updated>2021-02-27T08:13:04.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[科研心得 —— 如何快速学习新东西？ & 如何检索文献？]]></title>
         <id>https://justindoit.github.io/post/T1wiBr_sX/</id>
@@ -65,19 +79,5 @@
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-wu-ji-ti-yu-he-zuo/">
         </link>
         <updated>2021-02-25T06:22:47.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[半年小结（四）写程序]]></title>
-        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-si-xie-cheng-xu/</id>
-        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-si-xie-cheng-xu/">
-        </link>
-        <updated>2021-02-25T06:16:15.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[半年小结（三）做事情]]></title>
-        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-san-zuo-shi-qing/</id>
-        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-san-zuo-shi-qing/">
-        </link>
-        <updated>2021-02-25T06:15:59.000Z</updated>
     </entry>
 </feed>
