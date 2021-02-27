@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-02-26T09:11:10.336Z</updated>
+    <updated>2021-02-27T07:58:17.307Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -11,7 +11,35 @@
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
     <entry>
-        <title type="html"><![CDATA[图论（一）]]></title>
+        <title type="html"><![CDATA[科研心得 —— 如何快速学习新东西？ & 如何检索文献？]]></title>
+        <id>https://justindoit.github.io/post/T1wiBr_sX/</id>
+        <link href="https://justindoit.github.io/post/T1wiBr_sX/">
+        </link>
+        <updated>2021-02-27T07:50:59.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[图论（三）Python与Graph]]></title>
+        <id>https://justindoit.github.io/post/jkYTN80zm/</id>
+        <link href="https://justindoit.github.io/post/jkYTN80zm/">
+        </link>
+        <updated>2021-02-27T05:52:21.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[图论（二）图论中的]]></title>
+        <id>https://justindoit.github.io/post/xRnmxkr_l/</id>
+        <link href="https://justindoit.github.io/post/xRnmxkr_l/">
+        </link>
+        <updated>2021-02-27T05:52:05.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[图论（一）图论中的经典问题]]></title>
+        <id>https://justindoit.github.io/post/uulHPCSve/</id>
+        <link href="https://justindoit.github.io/post/uulHPCSve/">
+        </link>
+        <updated>2021-02-27T05:51:38.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[图论（零）结构]]></title>
         <id>https://justindoit.github.io/post/tu-lun-yi/</id>
         <link href="https://justindoit.github.io/post/tu-lun-yi/">
         </link>
@@ -51,39 +79,5 @@
         <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-san-zuo-shi-qing/">
         </link>
         <updated>2021-02-25T06:15:59.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[半年小结（二）读文献]]></title>
-        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-er-du-wen-xian/</id>
-        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-er-du-wen-xian/">
-        </link>
-        <updated>2021-02-25T05:59:07.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[半年小结（一）思维、习惯与方法论的转变]]></title>
-        <id>https://justindoit.github.io/post/ban-nian-xiao-jie-yi-za-xiang/</id>
-        <link href="https://justindoit.github.io/post/ban-nian-xiao-jie-yi-za-xiang/">
-        </link>
-        <updated>2021-02-25T05:49:45.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[组合数学（零）]]></title>
-        <id>https://justindoit.github.io/post/zu-he-shu-xue-ling/</id>
-        <link href="https://justindoit.github.io/post/zu-he-shu-xue-ling/">
-        </link>
-        <updated>2021-02-24T01:48:50.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://justindoit.github.io/post/hello-gridea/</id>
-        <link href="https://justindoit.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！</p>
-<p>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！</p>
-<p>✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></content>
     </entry>
 </feed>
