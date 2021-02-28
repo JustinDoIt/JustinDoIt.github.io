@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-02-28T10:35:29.621Z</updated>
+    <updated>2021-02-28T12:49:55.552Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -11,6 +11,13 @@
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
     <entry>
+        <title type="html"><![CDATA[知行合一]]></title>
+        <id>https://justindoit.github.io/post/jvLvwgeWn/</id>
+        <link href="https://justindoit.github.io/post/jvLvwgeWn/">
+        </link>
+        <updated>2021-02-28T11:37:24.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[生活思考 —— 我为什么要写博客？& 我什么要做开源？]]></title>
         <id>https://justindoit.github.io/post/2AD741gyl/</id>
         <link href="https://justindoit.github.io/post/2AD741gyl/">
@@ -18,7 +25,7 @@
         <updated>2021-02-27T09:10:41.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[宇宙的答案 —— 数学篇]]></title>
+        <title type="html"><![CDATA[My map of the mathematic]]></title>
         <id>https://justindoit.github.io/post/ig-vyAcfH/</id>
         <link href="https://justindoit.github.io/post/ig-vyAcfH/">
         </link>
@@ -72,12 +79,5 @@
         <link href="https://justindoit.github.io/post/uulHPCSve/">
         </link>
         <updated>2021-02-27T05:51:38.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[图论（零）结构]]></title>
-        <id>https://justindoit.github.io/post/tu-lun-yi/</id>
-        <link href="https://justindoit.github.io/post/tu-lun-yi/">
-        </link>
-        <updated>2021-02-26T06:36:28.000Z</updated>
     </entry>
 </feed>
