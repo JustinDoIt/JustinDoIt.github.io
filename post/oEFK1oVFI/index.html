@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>组合优化（一） | 张建琦</title>
+<meta name="description" content="满招损，谦得益">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico">
+<link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://justindoit.github.io">
+        <img src="https://justindoit.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">张建琦</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/archives" class="site-nav">
+            列表
+          </a>
+        
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      满招损，谦得益
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">组合优化（一）</h2>
+            <div class="post-date">2021-03-01</div>
+            
+            <div class="post-content">
+              <h2 id="1-1-无约束优化的间接法">1-1 无约束优化的间接法</h2>
+<ol>
+<li>黄金分割法</li>
+<li>最速下降法</li>
+<li>牛顿法</li>
+</ol>
+<h3 id="1-黄金分割法">1 黄金分割法</h3>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 7: \begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
+min f(x) \\
+x …'>\begin{equation}
+min f(x) \\
+x \in R
+\end{equation}
+</p>
+<p><strong>一维搜索</strong>又称线性搜索（Line Search），是指<strong>单变量函数</strong>最优化。一种著名的搜索方法：0.618法，又称<strong>黄金分割法</strong>（Golden Section Method），是用于在单峰函数区间上求极小值的一种方法。</p>
+<blockquote>
+<p>单峰函数定义：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">设</mi><mi mathvariant="normal">函</mi><mi mathvariant="normal">数</mi><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mi mathvariant="normal">在</mi><mi mathvariant="normal">区</mi><mi mathvariant="normal">间</mi><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo><mi mathvariant="normal">内</mi><mi mathvariant="normal">存</mi><mi mathvariant="normal">在</mi><mi mathvariant="normal">极</mi><mi mathvariant="normal">小</mi><mi mathvariant="normal">值</mi><mi mathvariant="normal">点</mi><msup><mi>t</mi><mo>∗</mo></msup><mo separator="true">,</mo><msup><mi>t</mi><mo>∗</mo></msup><mo>∈</mo><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo><mi mathvariant="normal">。</mi><mi mathvariant="normal">如</mi><mi mathvariant="normal">果</mi><mi mathvariant="normal">对</mi><mi mathvariant="normal">于</mi><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo><mi mathvariant="normal">上</mi><mi mathvariant="normal">任</mi><mi mathvariant="normal">意</mi><mi mathvariant="normal">两</mi><mi mathvariant="normal">点</mi><msub><mi>t</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>t</mi><mn>2</mn></msub><mi mathvariant="normal">，</mi><mi mathvariant="normal">满</mi><mi mathvariant="normal">足</mi><mi mathvariant="normal">：</mi></mrow><annotation encoding="application/x-tex">设函数 f(t) 在区间 [a,b] 内存在极小值点 t^*, t^* \in [a,b]。如果对于 [a,b] 上任意两点 t_1, t_2，满足：</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">设</span><span class="mord cjk_fallback">函</span><span class="mord cjk_fallback">数</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mord cjk_fallback">在</span><span class="mord cjk_fallback">区</span><span class="mord cjk_fallback">间</span><span class="mopen">[</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">]</span><span class="mord cjk_fallback">内</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">在</span><span class="mord cjk_fallback">极</span><span class="mord cjk_fallback">小</span><span class="mord cjk_fallback">值</span><span class="mord cjk_fallback">点</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">]</span><span class="mord cjk_fallback">。</span><span class="mord cjk_fallback">如</span><span class="mord cjk_fallback">果</span><span class="mord cjk_fallback">对</span><span class="mord cjk_fallback">于</span><span class="mopen">[</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">]</span><span class="mord cjk_fallback">上</span><span class="mord cjk_fallback">任</span><span class="mord cjk_fallback">意</span><span class="mord cjk_fallback">两</span><span class="mord cjk_fallback">点</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">满</span><span class="mord cjk_fallback">足</span><span class="mord cjk_fallback">：</span></span></span></span><br>
+$当t_1 &lt; t_2  $</p>
+</blockquote>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://justindoit.github.io/post/jvLvwgeWn/">
+                  <h3 class="post-title">
+                    知行合一
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
