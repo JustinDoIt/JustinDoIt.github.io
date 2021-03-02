@@ -84,6 +84,17 @@
 <p>广义的组合数学（Combinatorics）就是<strong>离散数学</strong>，狭义的组合数学是组合计数、图论、代数结构、数理逻辑等的总称。但这也是不同学者叫法的不同，总之，组合数学是一门研究可数或离散对象的科学。</p>
 <p><strong>离散才有组合，有组合后，就可以有组合计数、组合设计、组合矩阵、组合优化</strong>。当然，最主要的就是组合优化。<em>（最优化是从所有可能方案中选择最合理的一种以达到最优目标的学科）</em></p>
 <h3 id="12-分类">1.2 分类</h3>
+<p><img src="https://raw.githubusercontent.com/JustinDoIt/Picbed_PicGo/master/img/20210302195045.png" alt="按约束条件分类" loading="lazy"><br>
+按约束条件分类，我们有这样的走势</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/JustinDoIt/Picbed_PicGo/master/img/20210302195431.png" alt="按目标函数的状态分类" loading="lazy"></figure>
+<p><img src="https://raw.githubusercontent.com/JustinDoIt/Picbed_PicGo/master/img/20210302195238.png" alt="按解法分" loading="lazy"><br>
+按解法分，我们根据 <strong>目标函数是否连续并可导</strong>、<strong>目标函数是否是变量的线性函数、目标函数是否是变量的二次函数</strong> 三个情况可以这样分类。<br>
+对应上图，对于</p>
+<ul>
+<li>离散最优化方法： 主要用于求解目标函数不连续或者不可导的情况，典型的解法有爬山法、模拟退火、遗传算法和蚁群算法等；</li>
+<li>线性规划和二次规划：运筹学的重要研究内容，适用于目标函数是线性或二次函数的形式；</li>
+<li>连续最优化方法： 适用于逻辑回归、SVM、神经网络等机器学习问题，主要方法包括梯度下降、牛顿法和拟牛顿法。</li>
+</ul>
 <h4 id="根据函数线性与非线性">根据函数线性与非线性</h4>
 <ul>
 <li>线性最优化：目标函数 &amp; 约束条件 ==&gt; 线性</li>
