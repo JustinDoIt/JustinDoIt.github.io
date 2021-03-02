@@ -80,17 +80,21 @@
             <div class="post-date">2021-02-24</div>
             
             <div class="post-content">
-              <h1 id="1-组合数学旨在解决什么问题">1 组合数学旨在解决什么问题</h1>
+              <h1 id="0-从最优化到组合优化">0 从最优化到组合优化</h1>
+<p>最优化问题分成两类：一类是<strong>连续变量</strong>的问题，另一类是<strong>离散变量</strong>的问题。<mark>在连续变量里</mark>，一般地<u>求一组实数，或者一个函数</u>；<mark>在组合问题里</mark>，是从一个<strong>无限集</strong>或者<strong>可数无限集</strong>里寻找一个对象 —— 典型地是<u>一个整数，一个集合，一个排列，或者一个图</u>。一般地，这两类问题有相当不同的特色，并且求解它们的方法也是很不同的。</p>
+<h1 id="1-组合数学旨在解决什么问题">1 组合数学旨在解决什么问题</h1>
 <p>广义的组合数学（Combinatorics）就是<strong>离散数学</strong>，狭义的组合数学是组合计数、图论、代数结构、数理逻辑等的总称。但这也是不同学者叫法的不同，总之，组合数学是一门研究可数或离散对象的科学。</p>
-<p><strong>离散才有组合，有组合后，就可以有组合计数、组合设计、组合矩阵、组合优化</strong>。当然，最主要的就是组合优化。<em>（最优化是从所有可能方案中选择最合理的一种以达到最优目标的学科）</em></p>
+<p><strong>离散才有组合，有组合后，就可以有组合计数、组合设计、组合矩阵、组合优化</strong>。当然，最主要的就是组合优化。<em>（最优化是从所有可能方案中选择最合理的一种以达到最优目标的学科）</em> <em>（有限集合上的极值问题）</em></p>
 <h3 id="12-分类">1.2 分类</h3>
 <p><img src="https://raw.githubusercontent.com/JustinDoIt/Picbed_PicGo/master/img/20210302195045.png" alt="按约束条件分类" loading="lazy"><br>
 按约束条件分类，我们有这样的走势</p>
 <figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/JustinDoIt/Picbed_PicGo/master/img/20210302195431.png" alt="按目标函数的状态分类" loading="lazy"></figure>
-<p><img src="https://raw.githubusercontent.com/JustinDoIt/Picbed_PicGo/master/img/20210302195238.png" alt="按解法分" loading="lazy"><br>
-按解法分，我们根据 <strong>目标函数是否连续并可导</strong>、<strong>目标函数是否是变量的线性函数、目标函数是否是变量的二次函数</strong> 三个情况可以这样分类。<br>
-对应上图，对于</p>
 <ul>
+<li>目标函数是否连续可导；</li>
+<li>目标函数的形式，是否为线性函数或者二次函数。<br>
+<img src="https://raw.githubusercontent.com/JustinDoIt/Picbed_PicGo/master/img/20210302195238.png" alt="按解法分" loading="lazy"><br>
+按解法分，我们根据 <strong>目标函数是否连续并可导</strong>、<strong>目标函数是否是变量的线性函数、目标函数是否是变量的二次函数</strong> 三个情况可以这样分类。<br>
+对应上图，对于</li>
 <li>离散最优化方法： 主要用于求解目标函数不连续或者不可导的情况，典型的解法有爬山法、模拟退火、遗传算法和蚁群算法等；</li>
 <li>线性规划和二次规划：运筹学的重要研究内容，适用于目标函数是线性或二次函数的形式；</li>
 <li>连续最优化方法： 适用于逻辑回归、SVM、神经网络等机器学习问题，主要方法包括梯度下降、牛顿法和拟牛顿法。</li>
@@ -99,16 +103,6 @@
 <ul>
 <li>线性最优化：目标函数 &amp; 约束条件 ==&gt; 线性</li>
 <li>非线性最优化：目标函数 OR 约束条件 ==&gt; 非线性</li>
-</ul>
-<h4 id="根据是否有约束">根据是否有约束</h4>
-<ul>
-<li>有约束最优化</li>
-<li>无约束最优化</li>
-</ul>
-<h4 id="静态与动态">静态与动态</h4>
-<ul>
-<li>静态最优化</li>
-<li>动态最优化</li>
 </ul>
 <h4 id="教科书上的分类">教科书上的分类</h4>
 <ol>
@@ -126,17 +120,181 @@
 <li>梯度、Hesse矩阵</li>
 <li>凸集、凸函数</li>
 <li>...</li>
+<li>NP 完备性理论</li>
 </ol>
-<h1 id="2-组合数学中的著名问题">2 组合数学中的著名问题</h1>
+<h1 id="2-组合数学中的x大类著名问题">2 组合数学中的X大类著名问题</h1>
 <ul>
 <li>计算一些物品在特定条件下分组的方法数目；（排列组合）</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%9B%9B%E8%89%B2%E5%AE%9A%E7%90%86">地图着色问题</a>：对世界地图着色，每一个国家使用一种颜色，如果要求相邻国家颜色相异，是否总共只需要四种颜色？（图论）</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%9B%9B%E8%89%B2%E5%AE%9A%E7%90%86">地图着色问题</a>：对世界地图着色，每一个国家使用一种颜色，如果要求相邻国家颜色相异，是否总共只需要四种颜色？（图论）
+<ul>
+<li>每个节点染什么颜色？</li>
+<li>每种颜色的节点集合包含了哪些节点？</li>
+<li><strong>不同角度定义问题</strong></li>
+<li>布尔表达式可满足性问题
+<ul>
+<li>保证每个布尔变量在所有子句中取值一致，最大化为真的子句数量；</li>
+<li>保证每个子句为真，最大化布尔变量的一致性</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="https://zh.wikipedia.org/wiki/%E7%8B%BC%E3%80%81%E7%BE%8A%E3%80%81%E8%8F%9C%E9%97%AE%E9%A2%98">船夫过河问题</a>：船夫要把一匹狼、一只羊和一棵白菜运过河。只要船夫不在场，羊就会吃白菜、狼就会吃羊。船夫的船每次只能运送一样东西。怎样把所有东西都运过河？（线性规划）</li>
 <li><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%82%AE%E5%B7%AE%E9%97%AE%E9%A2%98">中国邮递员问题</a>：邮递员要穿过城市的每条路至少一次，怎样走使得走过的路程最短？（不是NP完全问题，存在多项式复杂度算法）（图论）（先求出度数为奇数的点，用匹配算法算出这些点间的连接方式，然后再用欧拉路径算法求解，这也是图论问题）</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98">分配问题</a>：有一些员工和许多任务，各个员工完成不同任务所花费的时间都不同。每个员工只分配一项任务。每项任务只被分配给一个员工，怎样分配员工与任务以使得所花费的时间最少？（线性规划）</li>
-<li>TSP问题：</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%BB%BB%E5%8A%A1%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98">分配问题</a>：有一些员工和许多任务，各个员工完成不同任务所花费的时间都不同。每个员工只分配一项任务。每项任务只被分配给一个员工，怎样分配员工与任务以使得所花费的时间最少？（线性规划）（混合整数线性规划？）<strong>在有限的时间和空间中合理使用软硬件资源创造更多收益</strong>
+<ul>
+<li>时间指派
+<ul>
+<li>先后续调度
+<ul>
+<li>单机作业调度</li>
+<li>车间流水线调度</li>
 </ul>
+</li>
+<li>时间槽分配
+<ul>
+<li>航班与列车时刻表</li>
+<li>人员排班表</li>
+<li>选修课表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>空间指派
+<ul>
+<li>哪个背包装哪些物品？—— 背包问题</li>
+<li>哪个处理器处理作业？ —— 多机作业调度</li>
+<li>哪个中心服务哪些客户？ —— 中心选址</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TSP问题：</li>
+<li>...</li>
+<li>NP 完全（NP-Complete）问题可在多项式时间内相互规约</li>
+</ul>
+<p><strong>还有网络流、旅行商、排序、装箱、着色、覆盖、最短路等等问题。</strong></p>
 <p>其实，从无约束的极值问题与等式约束下的条件极值问题开始，</p>
+<h1 id="3-基本求解方法分类">3 基本求解方法分类</h1>
+<ul>
+<li>贪心算法: 在保证求解速度的前提下提升优度
+<ul>
+<li>部分可以保证最优性的贪心算法往往也可以归类为动态规划 (例如 Dijkstra 最短路算法)</li>
+</ul>
+</li>
+<li>近似算法: 离最优解的差距有保障的贪心算法</li>
+<li>精确算法: 在确保最优性的前提下降低复杂度
+<ul>
+<li>深度/广度/优度优先树搜索</li>
+<li>动态规划</li>
+<li>混合整数规划的求解算法</li>
+</ul>
+</li>
+<li>启发式算法: 在优度和复杂度之间寻找平衡点
+<ul>
+<li>基于邻域动作: 元启发式算法
+<ul>
+<li>单个解 (Trajectory): 局部搜索</li>
+<li>多个解 (Population): 种群算法</li>
+</ul>
+</li>
+<li>基于树搜索
+<ul>
+<li>A*
+<ul>
+<li>启发函数可接受 (Admissible) 时为精确算法</li>
+</ul>
+</li>
+<li>向前看树搜索 (Lookahead Tree Search)</li>
+<li>线搜索 (Beam Search)</li>
+<li>蒙特卡洛树搜索 (Monte-Carlo Tree Search)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-problem-reduction-问题规约">4 Problem Reduction == 问题规约</h1>
+<ul>
+<li>图着色
+<ul>
+<li>寄存器分配
+<ul>
+<li>寄存器 =&gt; 颜色</li>
+<li>变量 =&gt; 节点</li>
+<li>两个变量生命周期有交集 =&gt; 不能使用同一个寄存器 =&gt; 不能染同一种颜色 =&gt; 两个节点间有一条边</li>
+</ul>
+</li>
+<li>多业务波长分配
+<ul>
+<li>波长 =&gt; 颜色</li>
+<li>路径 =&gt; 节点</li>
+<li>两条路径有交集 =&gt; 不能使用同一个波长 =&gt; 不能染同一种颜色 =&gt; 两个节点间有一条边</li>
+</ul>
+</li>
+<li>停机位分配
+<ul>
+<li>停机位 =&gt; 颜色</li>
+<li>飞机 =&gt; 节点</li>
+<li>两架飞机过站时间有交集 =&gt; 不能停在同一停机位 =&gt; 不能染同一种颜色 =&gt; 两个节点间有一条边</li>
+</ul>
+</li>
+<li>宿舍分配
+<ul>
+<li>宿舍 =&gt; 颜色</li>
+<li>学生 =&gt; 节点</li>
+<li>两个学生作息规律差异很大 =&gt; 不能住同一间宿舍 =&gt; 不能然同一种颜色 =&gt; 两个节点间有一条边</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>旅行销售员
+<ul>
+<li>快递与外卖配送</li>
+<li>物资采购</li>
+<li>人类基因组计划</li>
+</ul>
+</li>
+</ul>
+<h2 id="42-经典问题的相互转换">4.2 经典问题的相互转换</h2>
+<p><strong>独立集 &lt;=&gt; 最大团 &lt;=&gt; 顶点覆盖 =&gt; 支配集 &lt;=&gt; 集合覆盖 &lt;= 中心选址</strong><br>
+.</p>
+<p><strong>非对称旅行商 &lt;=&gt; 对称旅行商</strong><br>
+.</p>
+<p><strong>必经点最短简单路 =&gt; 非对称旅行商 &lt;=&gt; 最短简单路 &lt;=&gt; 最长简单路</strong></p>
+<ul>
+<li>必经点最短路 =&gt; 非对称旅行商
+<ul>
+<li>基本思路
+<ul>
+<li>增加一条无代价的旁路让所有非必经点能够通过该旁路被访问</li>
+<li>从起点出发, 经过最短路上的实际节点序列, 到达终点, 到达旁路起点, 通过旁路依次经过不在最短路上的实际节点</li>
+</ul>
+</li>
+<li>具体实现
+<ul>
+<li>假设起点为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span>, 终点为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span>, 共有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 个非必经节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>n</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">n_{1}, n_{2}, …, n_{k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>增加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个虚拟节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>v</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>v</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">v_{0}, v_{1}, …, v_{k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>增加以下有向边
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>→</mo><msub><mi>v</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">t \rightarrow v_{k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub><mo>→</mo><msub><mi>v</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><mspace width="1em"/><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo separator="true">,</mo><mi>k</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">v_{i} \rightarrow v_{i-1}, \quad \forall i \in [1, k]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:1em;"></span><span class="mord">∀</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub><mo>→</mo><msub><mi>n</mi><mi>i</mi></msub><mo separator="true">,</mo><mspace width="1em"/><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo separator="true">,</mo><mi>k</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">v_{i} \rightarrow n_{i}, \quad \forall i \in [1, k]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:1em;"></span><span class="mord">∀</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>i</mi></msub><mo>→</mo><msub><mi>v</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><mspace width="1em"/><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo separator="true">,</mo><mi>k</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">n_{i} \rightarrow v_{i-1}, \quad \forall i \in [1, k]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:1em;"></span><span class="mord">∀</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mn>0</mn></msub><mo>→</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">v_{0} \rightarrow s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span></li>
+</ul>
+</li>
+<li>上述有向边应满足
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo>(</mo><msub><mi>v</mi><mi>i</mi></msub><mo>→</mo><msub><mi>v</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo><mo>=</mo><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo>(</mo><msub><mi>v</mi><mi>i</mi></msub><mo>→</mo><msub><mi>n</mi><mi>i</mi></msub><mo>)</mo><mo>+</mo><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo>(</mo><msub><mi>n</mi><mi>i</mi></msub><mo>→</mo><msub><mi>v</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">cost(v_{i} \rightarrow v_{i-1}) = cost(v_{i} \rightarrow n_{i}) + cost(n_{i} \rightarrow v_{i-1})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo>(</mo><mi>t</mi><mo>→</mo><msub><mi>v</mi><mi>k</mi></msub><mo>)</mo><mo>=</mo><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo>(</mo><msub><mi>v</mi><mn>0</mn></msub><mo>→</mo><mi>s</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">cost(t \rightarrow v_{k}) = cost(v_{0} \rightarrow s) = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="43-经典问题的分解">4.3 经典问题的分解</h2>
+<p><strong>图着色 = 集合覆盖 + 独立集</strong></p>
 <h1 id="附录-数学-计算机-哲学-maybe-not-a-complex-mathematical-theory-but-a-simple-and-effective-theory">附录： (数学 &amp; 计算机 &amp; 哲学) Maybe not a complex mathematical theory but a simple and effective (theory)</h1>
 <p>我最初认识到，<strong>关系</strong>。关系也是映射，函数是一种映射，方程是一种映射(隐函数)，</p>
 <p>现在又认识到，<strong>结构</strong>。<br>
