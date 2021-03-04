@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-03-04T14:23:57.795Z</updated>
+    <updated>2021-03-04T14:54:09.635Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[焦虑来自和人比较 —— 为什么非要和别人比较]]></title>
+        <id>https://justindoit.github.io/post/eScqKKWyQ/</id>
+        <link href="https://justindoit.github.io/post/eScqKKWyQ/">
+        </link>
+        <updated>2021-03-04T14:31:11.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[写书的想法 —— 计算生物简明手册]]></title>
         <id>https://justindoit.github.io/post/r4gvJSe8a/</id>
@@ -86,12 +93,5 @@ s.t. \qquad
         <link href="https://justindoit.github.io/post/ig-vyAcfH/">
         </link>
         <updated>2021-02-27T08:47:18.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[科研心得 —— 一些科研体会]]></title>
-        <id>https://justindoit.github.io/post/ktxqnv-XC/</id>
-        <link href="https://justindoit.github.io/post/ktxqnv-XC/">
-        </link>
-        <updated>2021-02-27T08:28:33.000Z</updated>
     </entry>
 </feed>
