@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-03-08T06:17:00.136Z</updated>
+    <updated>2021-03-09T06:48:39.206Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[“你写的不是Python，而是C”]]></title>
+        <id>https://justindoit.github.io/post/RdxarVg7e/</id>
+        <link href="https://justindoit.github.io/post/RdxarVg7e/">
+        </link>
+        <updated>2021-03-09T01:43:58.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Wow Synthetic Biology 项目的想法]]></title>
         <id>https://justindoit.github.io/post/bbHI59o38/</id>
@@ -86,12 +93,5 @@ s.t. \qquad
         <link href="https://justindoit.github.io/post/jvLvwgeWn/">
         </link>
         <updated>2021-02-28T11:37:24.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[生活思考 —— 我为什么要写博客？& 我什么要做开源？]]></title>
-        <id>https://justindoit.github.io/post/2AD741gyl/</id>
-        <link href="https://justindoit.github.io/post/2AD741gyl/">
-        </link>
-        <updated>2021-02-27T09:10:41.000Z</updated>
     </entry>
 </feed>
