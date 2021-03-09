@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>技术分享 —— 1 精进之路 之 爬虫 | 张建琦</title>
+<meta name="description" content="满招损，谦得益">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico">
+<link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://justindoit.github.io">
+        <img src="https://justindoit.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">张建琦</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/archives" class="site-nav">
+            列表
+          </a>
+        
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      满招损，谦得益
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">技术分享 —— 1 精进之路 之 爬虫</h2>
+            <div class="post-date">2021-03-09</div>
+            
+            <div class="post-content">
+              <p>最近由于兴趣在做“学术前沿趋势分析”的个人 Project，既然学的技术是数据分析，为什么不先分析分析学术论文数据呢。</p>
+<p>也体会到了</p>
+<ol>
+<li>随着技术的精进，遇到的问题越来越深水区，似乎不再是传统招聘JD上所描述的内容；</li>
+<li>编程思维的指导</li>
+</ol>
+<h1 id="阶段一自动获取-pubmed文献数据">阶段一：自动获取 PubMed文献数据</h1>
+<p>这个阶段的目标是写一个 自动化搜集PubMed文献数据的程序。第一个小阶段性目标是 <strong>抓取 2020年 Nature Biotechnology</strong>的所有文章信息（425篇）。<br>
+一开始以为一个下午就可以完成（包括如果我不记录下来，我依旧会很惊讶为什么这么简单的任务一个下午不能完成），但真的做起事情，总是有意想不到的困难，细节是魔鬼。</p>
+<ol>
+<li>首先我没想到 PubMed有API，是自动；<br>
+1.</li>
+<li>Github搜了 PubMed相关程序，发现一个 PyMed的似乎非常靠谱，注释和examples都很齐全，但试了试发现；
+<ol>
+<li>学习 + 读代码 ==&gt; 半天；</li>
+</ol>
+</li>
+<li>转去读代码，但是发现对 JSON不够熟悉，转去学习 JSON；
+<ol>
+<li>学习 JSON 和序列化相关内容 == 半天；</li>
+</ol>
+</li>
+<li>萌生了自己从头写 PyMed的想法。</li>
+</ol>
+<p>理清思路，查了查 PubMed API，其实也很简单</p>
+<ol>
+<li>利用 PubMed API中的 ESearch + query，查找到</li>
+<li>从 response中得到 IDs</li>
+<li>利用 IDs和 EFetch 得到文献的具体信息</li>
+</ol>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://justindoit.github.io/post/RdxarVg7e/">
+                  <h3 class="post-title">
+                    “你写的不是Python，而是C”
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
