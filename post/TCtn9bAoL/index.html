@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>爬虫入门 ——  | 张建琦</title>
+<meta name="description" content="满招损，谦得益">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico">
+<link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://justindoit.github.io">
+        <img src="https://justindoit.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">张建琦</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/archives" class="site-nav">
+            列表
+          </a>
+        
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      满招损，谦得益
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">爬虫入门 —— </h2>
+            <div class="post-date">2021-03-10</div>
+            
+            <div class="post-content">
+              <blockquote>
+<p>自己搜集、标注数据比较难，更多的是利用好互联网与公开数据库。所以我是把爬虫作为最基础的本领理解并且想学会和掌握。<strong>不碰多线程、太复杂的动态页面和太复杂的反爬策略</strong>。</p>
+</blockquote>
+<h2 id="1-爬虫前置知识">1 爬虫前置知识</h2>
+<ol>
+<li>什么是爬虫 &amp; 爬虫的历史</li>
+<li>HTML/CSS/XML/JSON
+<ol>
+<li>HTTP常见请求类型 &amp; HTTP常见状态码</li>
+<li>Xpath：使用<strong>路径表达式</strong>在XML文档中进行导航
+<ol>
+<li>七种基本节点：元素、属性、文本、命名空间、处理指令、注释以及根节点</li>
+<li>节点之间关系：父、子、同胞（兄弟）、先辈、后代</li>
+<li>路径表达式
+<ol>
+<li>nodename 选取此节点的所有子节点</li>
+<li>/ 从根节点选取</li>
+<li>// 从匹配的当前节点选择文档中的节点，而不考虑它们的位置</li>
+<li>. 选取当前节点</li>
+<li>.. 选取父节点</li>
+<li>@ 选取属性</li>
+<li>（例子参考 bookstore.xml 文件 和 第三个PPT）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>JSON</li>
+<li>Python处理XML方法</li>
+<li>正则表达式</li>
+<li>Selenium</li>
+</ol>
+</li>
+<li>爬虫工作流程
+<ol>
+<li>将种子URL放入队列</li>
+<li>从队列中获取URL，抓取内容</li>
+<li>解析抓取内容，将需要进一步抓取的URL放入工作队列，存储解析后的内容</li>
+</ol>
+</li>
+<li>爬取策略
+<ol>
+<li>深度优先</li>
+<li>广度优先</li>
+<li>PageRank</li>
+<li>大站优先</li>
+</ol>
+</li>
+<li>如何去重
+<ol>
+<li>Hash 表</li>
+<li>Bloom 过滤器</li>
+</ol>
+</li>
+<li>Robots规范、Robots协议
+<ol>
+<li>网站通过 Robots协议告诉搜索引擎哪些页面可以抓取，哪些页面不能抓取</li>
+<li>Robots协议本质是网站和爬虫的沟通方式，用来指导搜索引擎更好地抓取内容而不是作为搜索引擎之间相互限制和不正当竞争的工具</li>
+</ol>
+</li>
+<li>爬虫质量标准
+<ol>
+<li>分布式</li>
+<li>可伸缩性</li>
+<li>性能和有效性</li>
+<li>质量</li>
+<li>新鲜性</li>
+<li>更新</li>
+<li>可扩展性</li>
+</ol>
+</li>
+</ol>
+<h2 id=""></h2>
+<ol>
+<li>如何获取静态网站（单机爬虫）
+<ol>
+<li>爬取百度百科词条</li>
+</ol>
+</li>
+<li>如何获取动态网站
+<ol>
+<li>百度翻译的词典信息（Ajax）</li>
+</ol>
+</li>
+<li>如何解析内容</li>
+<li>如何保存到本地
+<ol>
+<li>PubMed 文献信息抓取</li>
+</ol>
+</li>
+<li>...</li>
+<li>多线程、分布式</li>
+</ol>
+<h2 id="-2"></h2>
+<ol>
+<li>UA 模拟浏览器反扒
+<ol>
+<li>抓包提取 header</li>
+</ol>
+</li>
+<li>登录爬取问题</li>
+<li>验证码问题</li>
+<li>PC网页爬取遇到问题，可以向手机页面转变</li>
+</ol>
+<h1 id="附录一python-网络数据采集-读书笔记">附录一：《Python 网络数据采集》 读书笔记</h1>
+<p>urllib、BeautifulSoup、lxml、Scrapy、PdfMiner、Requests、Selenium、NLTK、Pillow、unittest、PySocks等</p>
+<p>没有关于多线程（Multiprocessing）、并发（concurrency）和集群（cluster）等高性能采集的概念</p>
+<h2 id="00-目录">0.0 目录</h2>
+<ol>
+<li>Chapter 1：初见网络爬虫
+<ol>
+<li>网络连接
+<ol>
+<li>如果有API可用，API确实会比写一个网络爬虫程序来获取数据更加方便；</li>
+<li>API 无法满足：（1）你搜集的数据来自多个不同的网站（2）网站没有提供API（3）API有请求内容和次数限制</li>
+<li>从输入baidu.com 按下回车到百度展现在我们面前，中间发生了什么</li>
+</ol>
+</li>
+<li>BeautifulSoup简介 —— 提取html和XML的<strong>节点信息</strong></li>
+</ol>
+</li>
+<li>Chapter 2：复杂HTML解析
+<ol>
+<li>不要一直都要用锤子</li>
+<li>再端一碗 BeautifulSoup
+<ol>
+<li>BeautifulSoup的 find() 和 find_all()</li>
+<li>其他 BeautifulSoup对象</li>
+<li>导航树</li>
+</ol>
+</li>
+<li>正则表达式</li>
+<li>正则表达式和 BeautifulSoup</li>
+<li>获取属性</li>
+<li>Lambda 表达式</li>
+<li>超越 BeautifulSoup</li>
+</ol>
+</li>
+<li>Chapter 3：开始采集
+<ol>
+<li>遍历单个域名</li>
+<li>采集整个网站</li>
+<li>通过互联网采集</li>
+<li>通过 Scrapy采集</li>
+</ol>
+</li>
+<li>Chapter 4：使用API
+<ol>
+<li>API概述</li>
+<li>API通用规则</li>
+<li>服务器响应</li>
+<li>Echo Nest</li>
+<li>Twitter API</li>
+<li>Google API</li>
+<li>解析 JSON 数据</li>
+<li>回到主题</li>
+<li>再说一点API</li>
+</ol>
+</li>
+<li>Chapter 5：存储数据
+<ol>
+<li>媒体文件</li>
+<li>把数据存储到 CSV</li>
+<li>MySQL</li>
+<li>Email</li>
+</ol>
+</li>
+<li>Chapter 6：读取文档
+<ol>
+<li>文档编码</li>
+<li>纯文本</li>
+<li>CSV</li>
+<li>PDF</li>
+<li>Word和 .docx</li>
+</ol>
+</li>
+<li>Chapter 7：数据清洗</li>
+<li>Chapter 8：自然语言处理（介绍隐马和NLTK做统计分析、词性分析）</li>
+<li>Chapter 9：穿越网页表单与登录窗口进行采集</li>
+<li>Chapter 10：采集 JavaScript</li>
+<li>Chapter 11：图像识别与文字处理
+<ol>
+<li>OCR库概述（Pillow、Tesseract、NumPy）</li>
+<li>读取验证码与训练 Tesseract</li>
+<li>获取验证码提交答案</li>
+</ol>
+</li>
+<li>Chapter 12：避开采集陷阱
+<ol>
+<li>道德规范 &amp; 让机器人看起来更像人类用户
+<ol>
+<li>修改 header</li>
+<li>处理 cookie</li>
+<li>时间就是一切</li>
+</ol>
+</li>
+<li>常见表单安全措施
+<ol>
+<li>隐含输入字段值</li>
+<li>避免蜜罐</li>
+</ol>
+</li>
+<li>问题检查表</li>
+</ol>
+</li>
+<li>Chapter 13：用爬虫测试网站
+<ol>
+<li>测试简介</li>
+<li>Python 单元测试</li>
+<li>Selenium 单元测试</li>
+<li>上述二者的选择</li>
+</ol>
+</li>
+<li>Chapter 14：远程采集
+<ol>
+<li>Why 要选服务器 （避免IP被封杀、移植性与扩展性）</li>
+<li>Tor 代理服务器</li>
+</ol>
+</li>
+</ol>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://justindoit.github.io/post/XlpqpYfsl/">
+                  <h3 class="post-title">
+                    技术分享 —— 1 精进之路 之 爬虫
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

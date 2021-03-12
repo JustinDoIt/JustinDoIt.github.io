@@ -82,8 +82,206 @@
             <div class="post-content">
               <blockquote>
 <p>之前组会被师兄建议说代码写的像C，这几个月看了不少代码，读懂功能后自己手写一遍，两相对比发现自己确实写的就是C语言的代码....<br>
-Python代码和C逻辑上确实是有区别的，本文就是我对 Pythonic的一些心得和总结</p>
+Python代码和C逻辑上确实是有区别的，本文就是我对 Pythonic的一些心得和总结，一共分为三部分</p>
 </blockquote>
+<h1 id="一-编程思维的转变">一、编程思维的转变</h1>
+<h1 id="chapter-1-批量操作思维">Chapter 1： 批量操作思维</h1>
+<h2 id="1-列表推导式">1 列表推导式</h2>
+<pre><code class="language-python"># LEVEL 0
+new_list = []
+for element in old_list:
+    if ...:
+        new_list.append(element)
+
+# Pythonic
+new_list = [ element for element in old_list if ... ]
+
+# 30-40 所有偶数的平方
+[ i**2 for i in range(30,41) if i%2 == 0]
+
+# 1-20 所有奇数平方的集合
+( i**2 for i in range(1,21) if i%2 == 1)
+</code></pre>
+<p>(用到 map 和 filter 的都要尽量重写成列表推导式？)</p>
+<h2 id="2-装饰器-decorator">2 装饰器 Decorator</h2>
+<pre><code class="language-python"># 需要对用户名进行检查，以判断用户是否有相应的权限进行某些操作
+# LEVEL 0
+class Store(object):
+    def get_food(self, username, food):
+        if username != 'admin':
+            raise Exception(&quot;This user is not allowed to get food&quot;)
+        return self.storage.get(food)
+
+    def put_food(self, username, food):
+        if username != 'admin':
+            raise Exception(&quot;This user is not allowed to put food&quot;)
+        self.storage.put(food)
+
+# LEVEL 1
+def check_is_admin(username):
+    if username != 'admin':
+        raise Exception(&quot;This user is not allowed to get food&quot;)
+
+class Store(object):
+    def get_food(self, username, food):
+        check_is_admin(username)
+        return self.storage.get(food)
+
+    def put_food(self, username, food):
+        check_is_admin(username)
+        return self.storage.put(food)
+    
+# LEVEL 2
+def check_is_admin(f):
+    def wrapper(*args, **kwargs):
+        if kwargs.get('username') != 'admin':
+            raise Exception(&quot;This user is not allowed to get food&quot;)
+        return f(*arg, **kargs)
+    return wrapper
+
+class Storage(object):
+    @check_is_admin
+    def get_food(self, username, food):
+        return self.storage.get(food)
+
+    @check_is_admin
+    def put_food(self, username, food):
+        return storage.put(food)
+</code></pre>
+<p>在这里，我们使用装饰器，就可以<strong>把参数检查和业务逻辑完全分离开来，让代码显得更加清晰</strong>。这也是比较Pythonic的代码。</p>
+<ol>
+<li>decorator 中只做定义和初始化的工作，不要用 decorator来执行某个操作。或者说，decorator 不要有除了定义以外的副作用</li>
+</ol>
+<p>例如，严格杜绝下面的用法</p>
+<pre><code class="language-python">def execute_once(f):
+    f('test')
+
+@execute_once
+def my_func(param):
+    ...
+    # 没有人会从代码中判断这个函数会在import的时候自动执行。
+    # 而且，没有人会懂为什么my_func的值是None。
+</code></pre>
+<ol start="2">
+<li>用decorator修饰一个函数得到另一个函数的时候，原函数的逻辑仍然是新函数的中心，而decorator增加的是相对无关紧要的或者外围的功能；尤其不要改变原函数的执行逻辑。</li>
+</ol>
+<p>严格杜绝下面例子</p>
+<pre><code class="language-python">def revert(f):
+    @wraps(f)
+    def newf(*args, **kwargs):
+        return not f(*args, **kwargs)   # No, please DON'T, really
+    return newf
+
+@revert
+def is_ok(my_str):
+    return my_str == 'OK'
+</code></pre>
+<ol start="3">
+<li>即使去掉修饰符，整个函数的逻辑仍然是完整、清晰、可读的。<br>
+严格杜绝下面的例子：</li>
+</ol>
+<pre><code class="language-python">def repeat(f):
+    @wraps(f)
+    def newf(*args, **kwargs):
+        data, num = f(*args, **kwargs)
+        return [data] * num
+    return newf
+
+@repeat
+def zeros(n):
+    return (0,n)    # What is it???
+</code></pre>
+<h2 id="3-动态类型语言">3 动态类型语言</h2>
+<pre><code class="language-python"># 受到不同请求，调用不同请求处理函数
+# LEVEL 0
+if (cmd == 'a')
+    processA()
+else if (cmd == 'b')
+    processB()
+else if (cmd == 'c')
+    processC()
+else if (cmd == 'd')
+    processD()
+……
+else
+    raise NotImplementException
+
+# LEVEL 1
+# 在Python里面，我们可以先判断一个类，有没有这个函数，
+# 如果有，则获取这个函数，然后再调用。所以，我们的代码可以写成这样：
+class A:
+    def fetch_func(self, action_name):
+        func= getattr(self, action_name, None)
+        return func
+
+    def execute(self, action, msg):
+        func= self.fetch_func(action)
+        if func is None:
+            return False, &quot;Action not found&quot;
+        return func(action, msg)
+</code></pre>
+<h2 id="4-lambda-表达式与-具名函数">4 lambda 表达式与 具名函数</h2>
+<pre><code class="language-python"># Python 是支持函数嵌套定义的，在已有的函数中可以嵌套定义心得函数
+def my_func():
+    def subfunc():
+        ...
+        subfunc()
+        ...
+# 嵌套的具名函数可以完全替代 lambda表达式，而且有许多有点：
+# 		1. 一个函数名可以迅速告诉读代码的人这个函数在做什么
+# 		2. 抛出异常的时候，有函数名称明显要比显示为&lt;lambda&gt;强
+# 		3. 可以添加比较复杂的逻辑
+# 		4. 可以使用decorator
+# 		5. 具名函数可以用yield（也就是说可以定义嵌套的具名的generator，但不能定义lambda的generator）
+# 		6. 需要作为返回值的一部分的时候，在repr表达式当中能显示函数名，方便调试
+# 一般来说，lambda表达式的使用一定要严格限定为
+#		1. 非常简单的逻辑，尤其最好不要在lambda当中再嵌套列表推演或者生成器表达式或者其他lambda表达式，非常不清晰
+#		2. 没有副作用，或者只包装一个有副作用的表达式
+#		3. 一次性使用（绝对不要用f = lambda x: ...这样的语句，虽然只有一行，但读代码的时候会很难找到f的定义）
+#		4. 单返回值——使用tuple或者list的多返回值会让括号嵌套变得复杂难读懂。
+# e.g.
+
+# bad
+return lambda x: lambda y: x + y
+# better
+def add_closure(x):
+    def add_func(y):
+        return x + y
+    return add_func
+return add_closure
+# 同样是嵌套的闭包，明显后一种写法要清晰的多
+</code></pre>
+<h2 id="1-上下文管理器">1 上下文管理器</h2>
+<pre><code class="language-python"># Java风格/C++风格的Python代码：
+myfile= open(r'C:\misc\data.txt')
+try:
+    for line in myfile:
+        ...use line here...
+finally:
+    myfile.close()
+
+# Pythonic的代码：
+with open(r'C:\misc\data.txt') as myfile:
+    for line in myfile:
+        ...use line here...
+</code></pre>
+<p>这里要说的是，上下文管理器是Python里面比较推荐的方式，如果用try...finally而不用with，就会被认为不够Pythonic。此外，上下文管理器还可以应用于锁和其他很多类似必须需要关闭的地方。</p>
+<h1 id="二-代码风格-系统设计的变与不变">二、代码风格、系统设计的变与不变</h1>
+<h2 id="22-python-接口设计">2.2 Python 接口设计</h2>
+<h3 id="221-接口参数设计的一些设计心得">2.2.1 接口参数设计的一些设计心得</h3>
+<p>如何设计一个函数的参数列表，是个很小的问题，却可以引申到整个设计理念差异上面。</p>
+<p>Java 1）把可能用到的参数全部写上（很多泛型类型名字很长）； 2）没有特别有效的方式表达复杂的参数结构（）；3）可能的性能损耗；4）不支持默认参数；希望能够通过传递接口的方式支持多态；</p>
+<p>Python 之于 Java 和 C++ 的区别在于可读性与简洁性。</p>
+<p>具体来说，<mark>当我们拿到一个函数，什么情况下我们可以再最短时间内知道如何调用它？</mark></p>
+<ol>
+<li>所有的参数都是<strong>你熟悉的类型</strong>；</li>
+<li>所有参数是<strong>单一责任</strong>的，你很清楚传入的这个参数起什么作用；</li>
+<li>所有的参数不会在传入之后产生<strong>副作用</strong>。</li>
+</ol>
+<p>所以第一条原则：<u>如果简单结构可以解决你的问题，就不要传递对象</u>。这也符合 Python 的理念——保持简单。</p>
+<p>如果传入的参数就是个对象呢？</p>
+<h1 id="三">三、</h1>
+<h1 id="附录一学习-requests-的接口设计">附录一：学习 requests 的接口设计</h1>
 
             </div>
             
