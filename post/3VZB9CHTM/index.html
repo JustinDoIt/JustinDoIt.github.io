@@ -82,14 +82,32 @@
             <div class="post-content">
               <h1 id="0-problem-introduction">0 Problem Introduction</h1>
 <h1 id="problem-1">Problem 1:</h1>
+<h2 id="问题描述">问题描述</h2>
+<h2 id="模型">模型</h2>
+<h2 id="python代码gurobi">Python代码（Gurobi）</h2>
 <h1 id="problem-2">Problem 2:</h1>
+<h2 id="问题描述-2">问题描述</h2>
+<h2 id="模型-2">模型</h2>
+<h2 id="python代码gurobi-2">Python代码（Gurobi）</h2>
 <h1 id="problem-3">Problem 3:</h1>
+<h2 id="问题描述-3">问题描述</h2>
+<h2 id="模型-3">模型</h2>
+<h2 id="python代码gurobi-3">Python代码（Gurobi）</h2>
 <h1 id="problem-4">Problem 4:</h1>
+<h2 id="问题描述-4">问题描述</h2>
+<h2 id="模型-4">模型</h2>
+<h2 id="python代码gurobi-4">Python代码（Gurobi）</h2>
 <h1 id="problem-5">Problem 5:</h1>
+<h2 id="问题描述-5">问题描述</h2>
+<h2 id="模型-5">模型</h2>
+<h2 id="python代码gurobi-5">Python代码（Gurobi）</h2>
 <h1 id="附录一gurobi学习">附录一：Gurobi学习</h1>
 <h2 id="1-gurobi-基本架构">1 Gurobi 基本架构</h2>
 <h2 id="11-数学表达式-程序写法">1.1 数学表达式 &lt;==&gt; 程序写法</h2>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mo>∑</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></msub><msub><mi>x</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>≤</mo><mn>5</mn><mspace width="1em"/><mo>(</mo><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mi>I</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sum_{j \in J} x_{i,j} \le 5 \quad ( \forall i \in I )</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.185818em;vertical-align:-0.43581800000000004em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.17862099999999992em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">∈</span><span class="mord mathdefault mtight" style="margin-right:0.09618em;">J</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.43581800000000004em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord">∀</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mclose">)</span></span></span></span> 对应的 Python代码为</p>
+<p>表达式</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><munder><mo>∑</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></munder><msub><mi>x</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>≤</mo><mn>5</mn><mspace width="1em"/><mo>(</mo><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mi>I</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sum_{j \in J} x_{i,j} \le 5 \quad ( \forall i \in I )
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.480449em;vertical-align:-1.430444em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8556639999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">∈</span><span class="mord mathdefault mtight" style="margin-right:0.09618em;">J</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.430444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord">∀</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mclose">)</span></span></span></span></span></p>
+<p>对应的 Python代码为</p>
 <pre><code class="language-PYTHON">for i in I:
     m.addConstr(quicksum(x[i,j] for j in J)&lt;=5)
 </code></pre>
@@ -99,6 +117,95 @@
 <figure data-type="image" tabindex="2"><img src="https://github.com/wurmen/Gurobi-Python/raw/master/python-gurobi%20%20model/picture/m.setobjective.png" alt="AA" loading="lazy"></figure>
 <figure data-type="image" tabindex="3"><img src="https://github.com/wurmen/Gurobi-Python/raw/master/python-gurobi%20%20model/picture/m.addconstr.png" alt="AA" loading="lazy"></figure>
 <h2 id="13-gurobi-attributes">1.3 Gurobi Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=========</td>
+<td>=========</td>
+</tr>
+<tr>
+<td>模型</td>
+<td>属性</td>
+</tr>
+<tr>
+<td>=========</td>
+<td>=========</td>
+</tr>
+<tr>
+<td>NumVars</td>
+<td>number of variables</td>
+</tr>
+<tr>
+<td>NumConstrs</td>
+<td>Number of linear constraints</td>
+</tr>
+<tr>
+<td>ObjVal</td>
+<td>objective value for current solution</td>
+</tr>
+<tr>
+<td>=========</td>
+<td>=========</td>
+</tr>
+<tr>
+<td>变量</td>
+<td>属性</td>
+</tr>
+<tr>
+<td>=========</td>
+<td>=========</td>
+</tr>
+<tr>
+<td>LB</td>
+<td>Lower bound</td>
+</tr>
+<tr>
+<td>Obj</td>
+<td>Linear objective coefficient</td>
+</tr>
+<tr>
+<td>VarName</td>
+<td>Variable name</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Value in the current solution</td>
+</tr>
+<tr>
+<td>=========</td>
+<td>=========</td>
+</tr>
+<tr>
+<td>线性约束</td>
+<td>属性</td>
+</tr>
+<tr>
+<td>=========</td>
+<td>=========</td>
+</tr>
+<tr>
+<td>ConstrName</td>
+<td>constraint name</td>
+</tr>
+<tr>
+<td>Pi</td>
+<td>dual value (also known as the shadow price)</td>
+</tr>
+<tr>
+<td>Slack</td>
+<td>Slack in the current solution</td>
+</tr>
+</tbody>
+</table>
+<p>以上为常用的属性，更多属性可以查询 <a href="https://www.gurobi.com/documentation/7.0/refman/attributes.html">官方文档</a></p>
+<p>Gurobi 网站内的 <a href="http://www.gurobi.com/documentation/7.5/refman/py_python_api_overview.html">Python专区</a></p>
+<p><a href="http://www.gurobi.com/documentation/7.5/refman/py_python_api_details.html">其他函数的详细资讯</a></p>
 
             </div>
             
