@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>NLP技术（暂时这个类） | 张建琦</title>
+<meta name="description" content="满招损，谦得益">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico">
+<link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://justindoit.github.io">
+        <img src="https://justindoit.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">张建琦</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/archives" class="site-nav">
+            列表
+          </a>
+        
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      满招损，谦得益
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">NLP技术（暂时这个类）</h2>
+            <div class="post-date">2021-03-20</div>
+            
+            <div class="post-content">
+              <hr>
+<h2 id="什么是-attention">什么是 Attention</h2>
+<h2 id="rnn结构">RNN：结构</h2>
+<figure data-type="image" tabindex="1"><img src="https://github.com/JustinDoIt/Picbed_PicGo/raw/main//img/20210320183503.png" alt="在此输入图片描述" loading="lazy"></figure>
+<p>对 RNN有一定了解的话，一定会知道，RNN有两个很明显的问题</p>
+<ul>
+<li>效率问题：需要逐个词进行处理，后一个词要等到前一个词的隐状态输出以后才能开始处理</li>
+<li>如果传递距离过长还会有梯度消失、梯度爆炸和遗忘问题。</li>
+</ul>
+<p>为了缓解传递间的梯度和遗忘问题，设计了各种各样的 RNN cell，最著名的两个就是 LSTM和GRU。</p>
+<p><strong>LSTM( Long Short Term Memory)</strong></p>
+<figure data-type="image" tabindex="2"><img src="https://github.com/JustinDoIt/Picbed_PicGo/raw/main//img/20210320183704.png" alt="在此输入图片描述" loading="lazy"></figure>
+<p>** GRU(Gated Recurrent Unit)**</p>
+<figure data-type="image" tabindex="3"><img src="https://github.com/JustinDoIt/Picbed_PicGo/raw/main//img/20210320183731.png" alt="在此输入图片描述" loading="lazy"></figure>
+<p>引用一个博主的比喻：<mark>这么做就像是在给马车换车轮，为什么不直接换成汽车呢</mark>（讲故事）</p>
+<p>于是就有了我们本文要介绍的核心结构——Transformer。Transformer 是Google Brain 2017的提出的一篇工作，它针对RNN的弱点进行重新设计，解决了RNN效率问题和传递中的缺陷等，在很多问题上都超过了RNN的表现。Transfromer的基本结构如下图所示，它是一个N进N出的结构，也就是说每个Transformer单元相当于一层的RNN层，接收一整个句子所有词作为输入，然后为句子中的每个词都做出一个输出。但是与RNN不同的是，Transformer能够同时处理句子中的所有词，并且任意两个词之间的操作距离都是1，这么一来就很好地解决了上面提到的RNN的效率问题和距离问题。</p>
+<h2 id="什么是-transformer">什么是 Transformer</h2>
+<h2 id="什么是bert">什么是BERT</h2>
+<p>Transformer 的 Encoder 变成了 BERT，Decoder变成了 GPT</p>
+<h2 id="什么是-gpt">什么是 GPT</h2>
+<p>Bert和GPT-2都采用的是transformer作为底层结构~效果都惊人的好。</p>
+<h3 id="差异">差异</h3>
+<ol>
+<li>语言模型：Bert和GPT-2虽然都采用transformer，但是Bert使用的是transformer的encoder，即：Self Attention，是双向的语言模型；而GPT-2用的是transformer中去掉中间Encoder-Decoder Attention层的decoder，即：Masked Self Attention，是单向语言模型。</li>
+<li>结构：Bert是pre-training + fine-tuning的结构；而GPT-2只有pre-training。</li>
+<li>输入向量：GPT-2是token embedding + prosition embedding；Bert是 token embedding + position embedding + segment embedding。</li>
+<li>参数量：Bert是3亿参数量；而GPT-2是15亿参数量。</li>
+<li>Bert引入Masked LM和Next Sentence Prediction；而GPT-2只是单纯的用单向语言模型进行训练，没引入这两个。</li>
+<li>Bert不能做生成式任务，而GPT-2可以。</li>
+</ol>
+<h1 id="附录nlp领域顶会">附录：NLP领域顶会</h1>
+<ul>
+<li>自然语言处理：ACL、EMMP、NAACL</li>
+<li>机器学习/深度学习：ICML、ICLR、MIPS、CAI、AISTATS</li>
+<li>数据挖掘：KDD、WSDM、SDM（偏理论）</li>
+<li>人工智能：IJCAI、AAAI</li>
+</ul>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://justindoit.github.io/post/rs082WkIF/">
+                  <h3 class="post-title">
+                    信息素养
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
