@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-03-21T14:39:09.878Z</updated>
+    <updated>2021-03-22T01:29:58.416Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[【读书笔记】乔布斯传 & 自控力 & 活着 & Python之禅]]></title>
+        <id>https://justindoit.github.io/post/H6sLmB9Gf/</id>
+        <link href="https://justindoit.github.io/post/H6sLmB9Gf/">
+        </link>
+        <updated>2021-03-21T14:39:11.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【读书笔记】《The Presentation Secrets of Steve Jobs》]]></title>
         <id>https://justindoit.github.io/post/z2SZ3L8ZD/</id>
@@ -72,12 +79,5 @@
         <link href="https://justindoit.github.io/post/r4gvJSe8a/">
         </link>
         <updated>2021-03-03T01:33:45.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SourceInsight 和 py call]]></title>
-        <id>https://justindoit.github.io/post/e2JAA3Zwh/</id>
-        <link href="https://justindoit.github.io/post/e2JAA3Zwh/">
-        </link>
-        <updated>2021-03-02T02:59:27.000Z</updated>
     </entry>
 </feed>
