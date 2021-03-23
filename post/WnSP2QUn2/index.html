@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【源码解读】PyTorch源码解读 &amp; MMCV框架 | 张建琦</title>
+<meta name="description" content="满招损，谦得益">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico">
+<link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://justindoit.github.io">
+        <img src="https://justindoit.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">张建琦</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/archives" class="site-nav">
+            列表
+          </a>
+        
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      满招损，谦得益
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【源码解读】PyTorch源码解读 &amp; MMCV框架</h2>
+            <div class="post-date">2021-03-22</div>
+            
+            <div class="post-content">
+              <blockquote>
+<p>练武功，就要多看看外面顶尖剑客如何舞剑，体会他们的内功、心法和身法</p>
+</blockquote>
+<ul>
+<li>torch.autograd</li>
+<li>BN &amp; syncBN</li>
+<li>torch.utils.data</li>
+<li>torch.nn.Module</li>
+<li>DP &amp; DDP</li>
+<li>torch.optim</li>
+<li>torch.cuda.amp</li>
+<li>torch.utils.cpp_extension</li>
+<li>torch.jit</li>
+<li>torch.nn.utils.prune</li>
+</ul>
+<h1 id="part-2mmcv">Part 2：MMCV</h1>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/336081587">MMCV官方解读（一）整体概述</a></li>
+</ol>
+<p>MMCV 从一开始的定位就是提供底层通用组件，故在设计之初就已经考虑到了灵活性和可扩展性，其主要特性是：</p>
+<ul>
+<li>统一可扩展的 io api</li>
+<li>支持非常丰富的图像/视频处理算子（图像和视频处理）</li>
+<li>图片/视频的标注文件（标注结果）可视化</li>
+<li>常用的工具类例如 timer 和 progress bar 等等。常用小工具（进度条、计时器等等）</li>
+<li>上层框架需要的 hook 机制以及可以直接使用的 runner</li>
+<li>高度灵活的 cfg 模式和注册器机制</li>
+<li>高效高质量的 cuda op<br>
+上面仅仅是初步介绍，后续会对核心组件重点分析，每个组件都会有实现原理、使用示例和扩展开发示例，目的就是帮助大家快速理解。<strong>目前规划大概是分析 fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong>，欢迎各位读者提意见，我们会依据读者建议进行调整规划。如果您有特别好的建议或者强烈推荐必须详细分析的组件，请直接在评论区留言！</li>
+</ul>
+<h2 id="1-utils库的收获">1 Utils库的收获</h2>
+<p>https://github.com/open-mmlab/mmcv/tree/master/mmcv/utils</p>
+<ul>
+<li>processbar.py
+<ul>
+<li>class ProgressBar &quot;&quot;&quot;A progress bar which can print the process&quot;&quot;&quot;<br>
++</li>
+</ul>
+</li>
+<li>timer.py</li>
+<li>logging.py</li>
+<li>testing.py</li>
+<li>path.py
+<ul>
+<li>def is_filepath(x)</li>
+<li>def fopen(<mark>filepath</mark>, *args, **kwargs)</li>
+<li>def check_file_exitst(<mark>filename</mark>, msg_tmpl='file &quot;{}&quot; does not exist')</li>
+<li>def mkdir_or_exist(dir_name, mode=0o777)</li>
+<li><s>def symlink(src, dst, overwrite=True)</s> 也没注释不知道干嘛的</li>
+<li><mark>def scandir</mark>(dir_path, suffix=None, recursive=False)
+<ul>
+<li>Return A generator for all the interested files with relative pathes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>misc.py
+<ul>
+<li>is_str(x)</li>
+<li>import_modules_from_strings</li>
+<li>iter_cast</li>
+<li>list_cast</li>
+<li>tuple_cast</li>
+<li>is_seq_of</li>
+<li>is_list_of</li>
+<li>is_tuple_of</li>
+<li>slice_list</li>
+<li>concat_list(in_list)     # Concatenate a list of list into a single list.
+<ul>
+<li>in_list (list): The list of list to be merged.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="fileio-模块">fileio 模块</h2>
+<ul>
+<li>handlers 文件夹</li>
+<li>file_client.py</li>
+<li>io.py</li>
+<li>parse.py
+<ul>
+<li>list_from_file(filename, prefix='', offset=0, max_num=0) <mark># Load a text file and parse the content as a list of strings.</mark></li>
+<li>dict_from_file(filename, key_type=str) <mark># Load a text file and parse the content as dict.</mark></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://justindoit.github.io/post/H6sLmB9Gf/">
+                  <h3 class="post-title">
+                    【读书笔记】乔布斯传 &amp; 自控力 &amp; 活着 &amp; Python之禅
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-03-22T01:29:58.416Z</updated>
+    <updated>2021-03-23T09:50:09.153Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[【磕盐技能】写论文了！]]></title>
+        <id>https://justindoit.github.io/post/lwVTqgkU3/</id>
+        <link href="https://justindoit.github.io/post/lwVTqgkU3/">
+        </link>
+        <updated>2021-03-23T08:54:47.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【思考】三十而立]]></title>
+        <id>https://justindoit.github.io/post/YJF5dnKAB/</id>
+        <link href="https://justindoit.github.io/post/YJF5dnKAB/">
+        </link>
+        <updated>2021-03-23T03:13:49.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【源码解读】PyTorch源码解读 & MMCV框架]]></title>
+        <id>https://justindoit.github.io/post/WnSP2QUn2/</id>
+        <link href="https://justindoit.github.io/post/WnSP2QUn2/">
+        </link>
+        <updated>2021-03-22T02:29:08.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【读书笔记】乔布斯传 & 自控力 & 活着 & Python之禅]]></title>
         <id>https://justindoit.github.io/post/H6sLmB9Gf/</id>
@@ -32,7 +53,7 @@
         <updated>2021-03-20T10:29:30.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[信息素养]]></title>
+        <title type="html"><![CDATA[【博士能力】信息素养]]></title>
         <id>https://justindoit.github.io/post/rs082WkIF/</id>
         <link href="https://justindoit.github.io/post/rs082WkIF/">
         </link>
@@ -53,31 +74,10 @@
         <updated>2021-03-09T06:48:40.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[“你写的不是Python，而是C”]]></title>
+        <title type="html"><![CDATA[“你写的不是Python，而是C”谈Python高级用法与接口设计]]></title>
         <id>https://justindoit.github.io/post/RdxarVg7e/</id>
         <link href="https://justindoit.github.io/post/RdxarVg7e/">
         </link>
         <updated>2021-03-09T01:43:58.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Wow Synthetic Biology 项目的想法]]></title>
-        <id>https://justindoit.github.io/post/bbHI59o38/</id>
-        <link href="https://justindoit.github.io/post/bbHI59o38/">
-        </link>
-        <updated>2021-03-08T06:14:35.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[焦虑来自和人比较 —— 为什么非要和别人比较]]></title>
-        <id>https://justindoit.github.io/post/eScqKKWyQ/</id>
-        <link href="https://justindoit.github.io/post/eScqKKWyQ/">
-        </link>
-        <updated>2021-03-04T14:31:11.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[写书的想法 —— 计算生物简明手册]]></title>
-        <id>https://justindoit.github.io/post/r4gvJSe8a/</id>
-        <link href="https://justindoit.github.io/post/r4gvJSe8a/">
-        </link>
-        <updated>2021-03-03T01:33:45.000Z</updated>
     </entry>
 </feed>

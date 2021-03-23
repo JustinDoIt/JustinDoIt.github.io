@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>“你写的不是Python，而是C” | 张建琦</title>
+<title>“你写的不是Python，而是C”谈Python高级用法与接口设计 | 张建琦</title>
 <meta name="description" content="满招损，谦得益">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -76,7 +76,7 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">“你写的不是Python，而是C”</h2>
+            <h2 class="post-title">“你写的不是Python，而是C”谈Python高级用法与接口设计</h2>
             <div class="post-date">2021-03-09</div>
             
             <div class="post-content">
@@ -251,6 +251,20 @@ def add_closure(x):
 return add_closure
 # 同样是嵌套的闭包，明显后一种写法要清晰的多
 </code></pre>
+<h2 id="4-所有列表字典iterable-object转换成生成器generator">4 所有列表字典（iterable object）转换成生成器（Generator）</h2>
+<h3 id="生成器的好处">生成器的好处</h3>
+<p>生成器的好处是延迟计算，一次返回一个结果。也就是说，它不会一次生成所有的结果，这对于大数据量处理，将会非常有用。</p>
+<p>简单的没他省内存，省内存的没他简单。</p>
+<p>惰性与自带迭代，是生成器最大的特点。</p>
+<p>就算是无穷大的数据，也一个一个生成，单纯这个来说，对内存毫无压力。</p>
+<h3 id="生成器有两种表现形式生成器函数yield和生成器表达式">生成器有两种表现形式：生成器函数（yield）和生成器表达式</h3>
+<p>在Python中，</p>
+<h4 id="1-迭代器">1 迭代器</h4>
+<h4 id="2">2</h4>
+<h4 id="3-使用生成器创建新的迭代模式">3 使用生成器创建新的迭代模式</h4>
+<h4 id="4">4</h4>
+<h4 id="5">5</h4>
+<h4 id="3">3</h4>
 <h2 id="1-上下文管理器">1 上下文管理器</h2>
 <pre><code class="language-python"># Java风格/C++风格的Python代码：
 myfile= open(r'C:\misc\data.txt')
