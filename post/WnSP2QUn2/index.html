@@ -99,7 +99,7 @@
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/336081587">MMCV官方解读（一）整体概述</a></li>
 </ol>
-<p>MMCV 从一开始的定位就是提供底层通用组件，故在设计之初就已经考虑到了灵活性和可扩展性，其主要特性是：</p>
+<p>MMCV 从一开始的定位就是提供<strong>底层通用组件</strong>，故在设计之初就已经考虑到了灵活性和可扩展性，其主要特性是：</p>
 <ul>
 <li>统一可扩展的 io api</li>
 <li>支持非常丰富的图像/视频处理算子（图像和视频处理）</li>
@@ -108,7 +108,7 @@
 <li>上层框架需要的 hook 机制以及可以直接使用的 runner</li>
 <li>高度灵活的 cfg 模式和注册器机制</li>
 <li>高效高质量的 cuda op<br>
-上面仅仅是初步介绍，后续会对核心组件重点分析，每个组件都会有实现原理、使用示例和扩展开发示例，目的就是帮助大家快速理解。<strong>目前规划大概是分析 fileio、image、parallel、runner 和 utils 这几个非常通用的组件</strong>，欢迎各位读者提意见，我们会依据读者建议进行调整规划。如果您有特别好的建议或者强烈推荐必须详细分析的组件，请直接在评论区留言！</li>
+上面仅仅是初步介绍，后续会对核心组件重点分析，每个组件都会有实现原理、使用示例和扩展开发示例，目的就是帮助大家快速理解。<strong>目前规划大概是分析 <mark>fileio</mark>、image、parallel（并行？）、<mark>runner</mark> 和 <mark>utils</mark> 这几个非常通用的组件</strong>，欢迎各位读者提意见，我们会依据读者建议进行调整规划。如果您有特别好的建议或者强烈推荐必须详细分析的组件，请直接在评论区留言！</li>
 </ul>
 <h2 id="1-utils库的收获">1 Utils库的收获</h2>
 <p>https://github.com/open-mmlab/mmcv/tree/master/mmcv/utils</p>
@@ -166,6 +166,207 @@
 <li>dict_from_file(filename, key_type=str) <mark># Load a text file and parse the content as dict.</mark></li>
 </ul>
 </li>
+</ul>
+<p>本文章主要介绍fileio中的两个核心组件：涉及文件读写的 file_handlers 和文件获取客户端（后端）FileClient</p>
+<ul>
+<li>file_handlers 的作用是对外提供统一的<mark>文件读写API</mark>，会根据待读写的文件后缀名自动选择不同的 handler进行具体操作</li>
+<li>FileClient 的作用是对外提供统一的<mark>文件内容获取 API</mark>，主要用于<strong>训练过程中数据的后端读取</strong>，通过用户选择或者自定义不同的 FileClient后端，可以轻松实现==<strong>文件缓存、文件加速读取</strong>==等等功能</li>
+</ul>
+<p>以上两个核心组件都是支持可扩展的。</p>
+<h3 id="1-file_handlers">1 file_handlers</h3>
+<p>file_handlers 作用是对外提供统一的文件读和写 API，用户可以在无感知的情况下读写各种类型的文件。要实现这个功能，做法非常多，可以采用面向接口编程的思想，核心代码如下：</p>
+<ol>
+<li>先在 base 类中定义接口，然后子类只需要实现对应接口即可</li>
+</ol>
+<pre><code class="language-PYTHON">from abc import ABCMeta, abstractmethod
+# 继承ABCMeta元类，使其无法直接实例化
+class BaseFileHandler(metaclass=ABCMeta):
+
+    #@abstractmethod表示子类必须要实现该方法，否则报错
+    # 文件读取
+    @abstractmethod
+    def load_from_fileobj(self, file, **kwargs):
+        pass
+    # 文件存储，需要传入对象obj和file
+    @abstractmethod
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        pass
+
+    #dump成字符串返回，当你不想保存时候使用
+    @abstractmethod
+    def dump_to_str(self, obj, **kwargs):
+        pass
+
+    # 对外实际上是采用下面两个api
+    def load_from_path(self, filepath, mode='r', **kwargs):
+        with open(filepath, mode) as f:
+            return self.load_from_fileobj(f, **kwargs)
+
+    def dump_to_path(self, obj, filepath, mode='w', **kwargs):
+        with open(filepath, mode) as f:
+            self.dump_to_fileobj(obj, f, **kwargs)
+</code></pre>
+<p>上述核心就是<strong>先定义几个抽象方法，然后再定义几个对外调用 API 即可</strong>。考虑到<strong>不同的读写具体子类在进行读写操作时候可能参数不一样</strong>，故上述每个方法上面都加了 **kwargs 可变字典参数。</p>
+<ol start="2">
+<li><strong>子类实现抽象方法</strong> （以 json 读写为例，其实现非常简单）：</li>
+</ol>
+<pre><code class="language-PYTHON">class JsonHandler(BaseFileHandler):
+    # 直接json.load即可
+    def load_from_fileobj(self, file):
+        return json.load(file)
+    
+    # 直接json.dump即可
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        kwargs.setdefault('default', set_default)
+        json.dump(obj, file, **kwargs)
+    
+    # 直接json.dumps返回格式化的json str
+    def dump_to_str(self, obj, **kwargs):
+        kwargs.setdefault('default', set_default)
+        return json.dumps(obj, **kwargs)
+
+</code></pre>
+<ol start="3">
+<li><strong>对外读写接口，屏蔽掉具体 handler 子类</strong></li>
+</ol>
+<pre><code class="language-PYTHON"># 目前已经提供的handler
+file_handlers = {
+    'json': JsonHandler(),
+    'yaml': YamlHandler(),
+    'yml': YamlHandler(),
+    'pickle': PickleHandler(),
+    'pkl': PickleHandler()
+}
+
+# 对外统一文件读取接口
+def load(file, file_format=None, **kwargs):
+    # 1 输入参数检查
+    if isinstance(file, Path):
+        file = str(file)
+    if file_format is None and is_str(file):
+        file_format = file.split('.')[-1]
+    if file_format not in file_handlers:
+        raise TypeError(f'Unsupported format: {file_format}')
+
+    # 2 基于文件格式，选择不同的handler
+    handler = file_handlers[file_format]
+
+    # 3 读取文件内容
+    if is_str(file):
+        obj = handler.load_from_path(file, **kwargs)
+    elif hasattr(file, 'read'):
+        obj = handler.load_from_fileobj(file, **kwargs)
+    else:
+        raise TypeError('&quot;file&quot; must be a filepath str or a file-object')
+    return obj
+
+# 文件写流程也是一样的
+def dump(obj, file=None, file_format=None, **kwargs):
+</code></pre>
+<ol start="4">
+<li>具体用法</li>
+</ol>
+<pre><code class="language-PYTHON">import mmcv
+
+# load data from a file
+data = mmcv.load('test.json')
+data = mmcv.load('test.yaml')
+data = mmcv.load('test.pkl')
+
+mmcv.dump(data, 'out.pkl')
+</code></pre>
+<p>详细使用文档见 <a href="https://mmcv.readthedocs.io/en/latest/io.html#load-a-text-file-as-a-list-or-dict">File IO</a></p>
+<p>当你需要的文件格式不在上述列表中时候，如何进行自定义扩展开发呢？这里以读写 .npy 文件为例进行简要代码构建。</p>
+<ol>
+<li><strong>继承 BaseFileHandler，然后实现抽象方法，最后注册到 MMCV 中</strong></li>
+</ol>
+<pre><code class="language-PYTHON">@register_handler('npy')
+class NpyHandler(BaseFileHandler):
+    def load_from_fileobj(self, file, **kwargs):
+        return np.load(file)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        np.save(file, obj)
+
+    def dump_to_str(self, obj, **kwargs):
+        # 实际上这么写没有意义，这里只是举例
+        return obj.tobytes()
+</code></pre>
+<p>需要特意说明的是 @register_handler('npy')，这是一个装饰器，目的是把我们刚才实现的 handler 注册到 MMCV 中，然后 MMCV 就可以直接找到该 handler 了，装饰器的核心代码如下：</p>
+<pre><code class="language-PYTHON">def register_handler(file_formats, **kwargs):
+
+    def wrap(cls):
+        # 这句话其实核心是：file_handlers[ext] = handler
+        # 把我们写的handler类设置到file_handlers的字典中
+        _register_handler(cls(**kwargs), file_formats)
+        return cls
+
+    return wrap
+</code></pre>
+<p>上述操作完成后，实际上运行过程中 file_handlers 会变成</p>
+<pre><code class="language-PYTHON">file_handlers = {
+    'json': JsonHandler(),
+    'yaml': YamlHandler(),
+    'yml': YamlHandler(),
+    'pickle': PickleHandler(),
+    'pkl': PickleHandler(),
+    'npy': NpyHandler()
+}
+</code></pre>
+<ol start="2">
+<li>使用示例</li>
+</ol>
+<pre><code class="language-PYTHON">if __name__ == '__main__':
+    arr1 = np.arange(12).reshape((3, 4))
+    mmcv.dump(arr1, 'out.npy', mode='wb')
+    data_str = mmcv.dump(arr1, file_format='npy', mode='wb')
+    print(data_str)
+    data = mmcv.load('out.npy', mode='rb')
+    print(data)
+</code></pre>
+<p>MMCV 中采用的装饰器注册模式，对自定义类的存放位置没有任何要求，你可以放置在任何位置，只要自己保证在使用自定义类前 MMCV 已经注册成功了就行。</p>
+<p>上述例子的完整代码如下：<br>
+<img src="https://github.com/JustinDoIt/Picbed_PicGo/raw/main//img/20210325092145.png" alt="在此输入图片描述" loading="lazy"></p>
+<ol start="3">
+<li><strong>附加内容</strong> 不知道大家发现没有，在调用的时候，我们需要额外传入 mode 参数，原因是默认的 mode 参数是 'r' 或者 'w'，但是在 numpy 中需要是 byte 格式。其实我们还有一种做法可以避免传入 mode 字段，具体就是在 NpyHandler 中显式写死读写模式，具体如下：</li>
+</ol>
+<pre><code class="language-PYTHON">@register_handler('npy')
+class NpyHandler(BaseFileHandler):
+    def load_from_fileobj(self, file, **kwargs):
+        return np.load(file)
+    # 主要是提供了默认的rb模式
+    def load_from_path(self, filepath, **kwargs):
+        return super(NpyHandler, self).load_from_path(
+            filepath, mode='rb', **kwargs)
+
+    def dump_to_fileobj(self, obj, file, **kwargs):
+        np.save(file, obj)
+
+    # 主要是提供了默认的wb模式
+    def dump_to_path(self, obj, filepath, **kwargs):
+        super(NpyHandler, self).dump_to_path(
+            obj, filepath, mode='wb', **kwargs)
+
+    def dump_to_str(self, obj, **kwargs):
+        # 实际上这么写没有意义
+        return obj.tobytes()
+</code></pre>
+<p>对外使用的例子就不再需要传入 mode 参数：</p>
+<pre><code class="language-PYTHON">if __name__ == '__main__':
+    arr1 = np.arange(12).reshape((3, 4))
+    dump(arr1, 'out.npy')
+    data_str = dump(arr1, file_format='npy')
+    print(data_str)
+    data = load('out.npy')
+    print(data)
+</code></pre>
+<h2 id="2-总结">2 总结</h2>
+<p>通过本小结内容的解读，希望读者能够了解以下内容：</p>
+<ul>
+<li>如何通过 Python 构建一个可扩展的简单组件，后面的很多核心组件都采用了上述做法</li>
+<li>理解默认提供的 5 种 file-handler 使用示例，以及实现原理</li>
+<li>能够进行自定义扩展开发<br>
+如对上述解读有任何疑问或者建议，<a href="https://zhuanlan.zhihu.com/p/336097883">欢迎在评论区留言</a></li>
 </ul>
 
             </div>

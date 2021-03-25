@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-03-23T09:50:09.153Z</updated>
+    <updated>2021-03-25T01:47:34.374Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[【磕盐技能】什么是优秀的开源项目]]></title>
+        <id>https://justindoit.github.io/post/0vxFAoeHU/</id>
+        <link href="https://justindoit.github.io/post/0vxFAoeHU/">
+        </link>
+        <updated>2021-03-23T11:19:55.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【磕盐技能】写论文了！]]></title>
         <id>https://justindoit.github.io/post/lwVTqgkU3/</id>
@@ -72,12 +79,5 @@
         <link href="https://justindoit.github.io/post/XlpqpYfsl/">
         </link>
         <updated>2021-03-09T06:48:40.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[“你写的不是Python，而是C”谈Python高级用法与接口设计]]></title>
-        <id>https://justindoit.github.io/post/RdxarVg7e/</id>
-        <link href="https://justindoit.github.io/post/RdxarVg7e/">
-        </link>
-        <updated>2021-03-09T01:43:58.000Z</updated>
     </entry>
 </feed>
