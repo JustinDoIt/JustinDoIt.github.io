@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-04-18T02:53:06.291Z</updated>
+    <updated>2021-05-01T16:09:39.036Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://justindoit.github.io/images/avatar.png</logo>
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
+    <entry>
+        <title type="html"><![CDATA[【流水账日记】4月流水账日记]]></title>
+        <id>https://justindoit.github.io/post/MjrFv0VzN/</id>
+        <link href="https://justindoit.github.io/post/MjrFv0VzN/">
+        </link>
+        <updated>2021-05-01T15:40:18.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一年思考（二）职业规划]]></title>
+        <id>https://justindoit.github.io/post/aNfuX5rx1/</id>
+        <link href="https://justindoit.github.io/post/aNfuX5rx1/">
+        </link>
+        <updated>2021-04-28T11:59:01.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[蛋白设计相关知识]]></title>
         <id>https://justindoit.github.io/post/cpoXvGRW8/</id>
@@ -65,19 +79,5 @@
         <link href="https://justindoit.github.io/post/z2SZ3L8ZD/">
         </link>
         <updated>2021-03-21T13:32:23.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[NLP技术（暂时这个类）]]></title>
-        <id>https://justindoit.github.io/post/ALDcRmZoc/</id>
-        <link href="https://justindoit.github.io/post/ALDcRmZoc/">
-        </link>
-        <updated>2021-03-20T10:29:30.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【博士能力】信息素养]]></title>
-        <id>https://justindoit.github.io/post/rs082WkIF/</id>
-        <link href="https://justindoit.github.io/post/rs082WkIF/">
-        </link>
-        <updated>2021-03-17T01:22:57.000Z</updated>
     </entry>
 </feed>
