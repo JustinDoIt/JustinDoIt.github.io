@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-06-15T14:22:00.312Z</updated>
+    <updated>2021-07-07T11:55:46.435Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -11,25 +11,11 @@
     <icon>https://justindoit.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 张建琦</rights>
     <entry>
-        <title type="html"><![CDATA[一年思考（零）什么是科研入门？]]></title>
-        <id>https://justindoit.github.io/post/_zkulydpx/</id>
-        <link href="https://justindoit.github.io/post/_zkulydpx/">
-        </link>
-        <updated>2021-05-05T03:21:49.000Z</updated>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[《Algorithms on Strings, Trees and Sequences》读书笔记]]></title>
         <id>https://justindoit.github.io/post/RBuuo81TD/</id>
         <link href="https://justindoit.github.io/post/RBuuo81TD/">
         </link>
         <updated>2021-05-04T18:23:10.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【流水账日记】4月5月流水账日记]]></title>
-        <id>https://justindoit.github.io/post/MjrFv0VzN/</id>
-        <link href="https://justindoit.github.io/post/MjrFv0VzN/">
-        </link>
-        <updated>2021-05-01T15:40:18.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[一年思考（二）职业规划]]></title>
@@ -79,5 +65,19 @@
         <link href="https://justindoit.github.io/post/H6sLmB9Gf/">
         </link>
         <updated>2021-03-21T14:39:11.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【读书笔记】《The Presentation Secrets of Steve Jobs》]]></title>
+        <id>https://justindoit.github.io/post/z2SZ3L8ZD/</id>
+        <link href="https://justindoit.github.io/post/z2SZ3L8ZD/">
+        </link>
+        <updated>2021-03-21T13:32:23.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NLP技术（暂时这个类）]]></title>
+        <id>https://justindoit.github.io/post/ALDcRmZoc/</id>
+        <link href="https://justindoit.github.io/post/ALDcRmZoc/">
+        </link>
+        <updated>2021-03-20T10:29:30.000Z</updated>
     </entry>
 </feed>
