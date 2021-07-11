@@ -1,10 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>科研心得 —— 如何快速学习新东西？ &amp; 如何检索文献？ | </title>
+<title>搜索 - </title>
 
 <link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico?v=1626016521702">
 
@@ -25,11 +27,21 @@
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.0/dist/fuse.basic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ejs@3.1.3/ejs.min.js"></script>
+    <script src="https://justindoit.github.io/media/gridea-search/gridea-search.js"></script>
+    <script src="https://justindoit.github.io/media/gridea-search/result-template.ejs" type="text/ejs"></script>
 </head>
+
 <body>
-<div class="main gt-bg-theme-color-first">
-    <nav class="navbar navbar-expand-lg">
+    <style>
+        .searched-keyword {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <div class="main gt-bg-theme-color-first">
+        <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,49 +97,16 @@
     </div>
 </nav>
 
-    <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
-            <article class="gt-post-content">
-                <h2 class="post-title">
-                    科研心得 —— 如何快速学习新东西？ &amp; 如何检索文献？
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2021-02-27 ·
-                    </time>
-                    
-                </div>
-                <div class="post-content">
-                    <h1 id="part-1如何学习新东西">Part 1：如何学习新东西</h1>
-<blockquote>
-<p>生活中，许多事情搞清楚总比不清楚要好，不管是知识还是实践技能都是艺多不压身。我的长辈和我说过一句话曾让我醍醐灌顶，“有些人哪怕到了耄耋之年，也没有活明白，希望你不要成为那样的人”</p>
-</blockquote>
-<h2 id="11-思维方式的转变一切知识被发明都是为了解决什么问题或者概括什么现象">1.1 思维方式的转变：一切知识被发明都是为了解决什么问题或者概括什么现象</h2>
-<h2 id="12-训练方式的转变">1.2 训练方式的转变：</h2>
-<p>有的人上来就找网课看，也有的学霸会说“看教材/PPT是最快的学习方式”，不过都是形式，最根本的还是在这个过程中要有自己积极主动地思考。看视频、看教材、看论文这些都是</p>
-<h1 id="part-2如何检索文献">Part 2：如何检索文献</h1>
-<p>比文献检索更高一个层次的<strong>如何做信息检索</strong>，其实我有更好的心得，有机会再给大家分享，欢迎大家关注我的</p>
-<p>我好像没什么东西你能关注🕶</p>
-
-                </div>
-            </article>
-        </div>
-
-        
-            <div class="next-post">
-                <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://justindoit.github.io/post/jkYTN80zm/" class="post-title gt-a-link">
-                    图论（三）自己实现 与 NetworkX
-                </a>
+        <div id="gridea-search-result" data-update="1626016521702">
+            <div class="searching" style="font-size: 18px; margin-top: 50px;">
+                <i class="fa fa-sync-alt fa-spin"></i>&nbsp;&nbsp;搜索中......
+                <br><br>
+                <span style="font-size: 65%; color: #aaa">第一次搜索可能需要耗费较长时间构建索引，请耐心等待...</span>
             </div>
-        
-
-        
-
-        
-
-        
-
+            <div class="no-result" style="display:none; font-size: 20px; margin-top: 50px;">
+                <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;未搜索到相关文章，请更换关键词
+            </div>
+        </div>
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">满招损，谦得益</div>
     <div class="social-container">
@@ -159,6 +138,6 @@
 </script>
 
     </div>
-</div>
 </body>
+
 </html>

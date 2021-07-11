@@ -1,132 +1,160 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>焦虑来自和人比较 —— 为什么非要和别人比较 | 张建琦</title>
-<meta name="description" content="满招损，谦得益">
+<title>焦虑来自和人比较 —— 为什么非要和别人比较 | </title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico?v=1626016521702">
 
-<link rel="shortcut icon" href="https://justindoit.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://justindoit.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://justindoit.github.io">
-        <img src="https://justindoit.github.io/images/avatar.png" class="site-logo">
-        <h1 class="site-title">张建琦</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
-        
-          <a href="/archives" class="site-nav">
-            列表
-          </a>
-        
-      
-        
-          <a href="/" class="site-nav" target="_blank">
-            首页
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="site-description">
-      满招损，谦得益
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">焦虑来自和人比较 —— 为什么非要和别人比较</h2>
-            <div class="post-date">2021-03-04</div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
             
-            <div class="post-content">
-              <p>一是，<strong>每个人的time zone不同</strong>，你只要在你自己的时间线下做纵向对比就好了。you are not too early，you are not too late，you are very much on time in your time zone。这个特别符合我的情况，特别对症的良药。我小时候属于干什么都比同龄人快一步的，从小学到大学，一直都是班上年龄最小的，但出国以后由于一些原因又比别人慢了一拍，读博之后更感觉自己在人生和学术上都too late，压力非常大。time zone的理论这么一想还真卸下不少包裹。</p>
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            列表
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link" target="_blank">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1626016521702" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    焦虑来自和人比较 —— 为什么非要和别人比较
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-03-04 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <p>一是，<strong>每个人的time zone不同</strong>，你只要在你自己的时间线下做纵向对比就好了。you are not too early，you are not too late，you are very much on time in your time zone。这个特别符合我的情况，特别对症的良药。我小时候属于干什么都比同龄人快一步的，从小学到大学，一直都是班上年龄最小的，但出国以后由于一些原因又比别人慢了一拍，读博之后更感觉自己在人生和学术上都too late，压力非常大。time zone的理论这么一想还真卸下不少包裹。</p>
 <p>二是，千万不要被毒鸡汤成功学忽悠，热爱学习和科学的同时，也要热爱生活，关注健康。从小我们就学悬梁刺股，凿壁借光，长大成人后各种励志公众号给我们推送成功学的文章，鼓吹凌晨两点的哈佛图书馆，某某名人凌晨四点开始的一天，某某学者没有休假的十年如一日等等。</p>
 <p>可是真的是这样吗？做到这样就可以成功吗？又不是没见过凌晨四点的图书馆，又不是没过过一周七天每天10h以上的研究室生活，可我还是一个焦虑的普普通通的为发paper累死累活的小博啊，可反观别人日子经营的风生水起，书也念的轻松呀。我发现身边phd念的好的，个个都眼神发光，特别有活力，并不是刻板印象的书呆子。至少都有个业余爱好，自带fire体质，可以睡研究室努力，也可以拎个滑板就上街浪，没事开个小 party弹弹吉他，搞个cos度个假什么的。可见劳逸结合，热爱生活是多么重要，简直就是点燃学术激情的火苗呀。</p>
 <p>现在我也懂得把心和脚步慢下来，把时间拨一些给生活，不再火急火燎地赶路，也看看身边的风景，感觉日子变得又紧凑又有趣，每天起床都觉得很美好。有空的时候出去旅旅游，看看无脑的小说,读万卷书行万里路嘛哈哈，没空的时候嘛，抽个十几分钟或者和朋友聊个天，和爸妈说说一天的见闻，或者画个漫画写写字。</p>
 <p>总之，keep calm，make friends，be relaxed，carry on是读博教我的第一课，与诸君共勉。</p>
 <p>ps：打字好累哦，各位，走过路过留个赞嘞～</p>
 
-            </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://justindoit.github.io/post/e2JAA3Zwh/">
-                  <h3 class="post-title">
-                    SourceInsight 和 py call
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-
-          </div>
-
+                </div>
+            </article>
         </div>
-      </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://justindoit.github.io/post/e2JAA3Zwh/" class="post-title gt-a-link">
+                    SourceInsight 和 py call
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">满招损，谦得益</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://justindoit.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
-
-
-
-  </body>
+    </div>
+</div>
+</body>
 </html>
