@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://justindoit.github.io</id>
     <title>张建琦</title>
-    <updated>2021-07-11T14:16:59.541Z</updated>
+    <updated>2021-07-11T14:40:23.233Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://justindoit.github.io"/>
     <link rel="self" href="https://justindoit.github.io/atom.xml"/>
@@ -18,7 +18,7 @@
         <updated>2021-05-04T18:23:10.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[一年思考（二）职业规划]]></title>
+        <title type="html"><![CDATA[一年思考（二）]]></title>
         <id>https://justindoit.github.io/post/aNfuX5rx1/</id>
         <link href="https://justindoit.github.io/post/aNfuX5rx1/">
         </link>
